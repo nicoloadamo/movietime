@@ -1,5 +1,5 @@
 class Movie < ApplicationRecord
-  belongs_to :event
+  has_many :events
 
   validates :title, :overview, presence: true
 end
