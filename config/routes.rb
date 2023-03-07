@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :requests
+  resources :reviews
+  resources :events
+  resources :registrations
   devise_for :users
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
