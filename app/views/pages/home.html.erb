@@ -1,48 +1,50 @@
+<div class="banner">
+    <div class="container">
+        <h1><strong>MovieNight!</strong></h1>
+        <p>Discover new <strong>movies</strong> and <strong>friends</strong>!</p>
+        <%= link_to "Join the comunity!", events_path, class: "btn btn-warning" %>
+    </div>
+</div>
 <div class="container">
-    <div class="break-out">
-        <div class="banner bg-dark">
-            <div class="container text-light">
-                <h1><strong>Movie Night</strong> <br> share your <strong>movie</strong> evening!</h1>
-            </div>
-
-        <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-            <div class="search-form-control form-group home-search">
-                <input class="form-control string required home-form" type="text" name="search[query]" id="search_query" />
-                <button name="button" type="submit" class="btn btn-warning">
-                <i class="fas fa-search"></i> Search
-                </button>
-            </div>
-        <% end %>
-       </div>
+  <h2 class="text-center">MovieTime! in short:</h2>
+  <div class="cards flex-box">
+    <div class="infocard display-flex">
+      <img  src="app/assets/images/find.png" alt="">
+      <h4>Find Your Next MovieNight</h4>
+      <p>
+        Choose from a wide collection of user-created MovieNights.
+      </p>
     </div>
 
-  <div class="cards">
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
+    <div class="infocard">
+      <img  src="/app/assets/images/memories.png" alt="">
+      <h4>Create a MovieNight to Remember</h4>
+      <p>
+        Quickly gather a group of fellow movie lovers and share your place to
+        enjoy your favorite movies together.
+      </p>
+    </div>
 
-      <div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-      </div>
-
-      <div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-      </div>
+    <div class="infocard">
+      <img  src="app/assets/images/movienight.png" alt="">
+      <h4>Join the Movie Night Community</h4>
+      <p>
+        Build a reputation as cinema addict in your city and make new friends!
+        Join us today and start making movie memories that will last a lifetime.
+      </p>
+    </div>
   </div>
 </div>
 
 
-<footer></footer>
-
+  <div class="footer">
+  <div class="footer-links">
+    <img class="avatar-large" alt="avatar-large" src="https://avatars.githubusercontent.com/u/28396318?v=4" />
+    <img class="avatar-large" alt="avatar-large" src="https://avatars.githubusercontent.com/u/48437522?v=4" />
+    <img class="avatar-large" alt="avatar-large" src="https://avatars.githubusercontent.com/u/122130648?v=4" />
+    <img class="avatar-large" alt="avatar-large" src="https://avatars.githubusercontent.com/u/111685164?v=4" />
+  </div>
+  <div class="footer-copyright">
+    This footer is made with <i class="fas fa-heart"></i> at Batch#1103 Le Wagon
+  </div>
+</div>

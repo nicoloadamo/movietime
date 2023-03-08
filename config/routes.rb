@@ -1,13 +1,21 @@
 Rails.application.routes.draw do
-  resources :requests
-  resources :reviews
-  resources :events
-  devise_for :users
-  # Define the show of the user
-  resources :users, only: [:show]
   root to: "pages#home"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :events
+  devise_for :users do
+    resources :reviews
+  end
+
+  get "user/:id", to: "users#show", as: :user
+
+  resources :events do
+    resources :users do
+      resources :requests do
+        member do
+          post 'accept'
+          post 'reject'
+        end
+      end
+    end
+  end
 end
