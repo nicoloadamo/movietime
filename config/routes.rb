@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
-  resources :requests
-  resources :reviews
-  resources :events
-  devise_for :users
   root to: "pages#home"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :reviews
+  devise_for :users
+  resources :events
+  resources :requests do
+    member do
+      post 'accept'
+      post 'reject'
+    end
+  end
 end

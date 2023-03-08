@@ -15,23 +15,8 @@
   </p>
 
   <p>
-    <strong>Max registrations:</strong>
+    <strong>Number of guests (max):</strong>
     <%= event.max_registrations %>
-  </p>
-
-  <p>
-    <strong>Address:</strong>
-    <%= event.address %>
-  </p>
-
-  <p>
-    <strong>Latitude:</strong>
-    <%= event.latitude %>
-  </p>
-
-  <p>
-    <strong>Longitude:</strong>
-    <%= event.longitude %>
   </p>
 
   <p>
@@ -50,8 +35,9 @@
   </p>
 
   <p>
-    <strong>User:</strong>
-    <%= event.user_id %>
+    <strong>Address:</strong>
+    <%= event.address %>
+    <% event.latitude %>
+    <% event.longitude %>
   </p>
-
 </div>

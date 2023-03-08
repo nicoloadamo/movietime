@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 puts "creating reviewer"
-reviewer = User.find_or_create_by(email: "rewiewer@movienight.events")
+reviewer = User.find_or_create_by(email: "reviewer@movienight.events")
 reviewer.update(password: "reviewer")
 
 puts "creating user"

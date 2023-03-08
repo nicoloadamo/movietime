@@ -1,17 +1,10 @@
-<div id="<%= dom_id request %>">
-  <p>
-    <strong>Status:</strong>
-    <%= request.status %>
-  </p>
-
-  <p>
-    <strong>Event:</strong>
-    <%= request.event_id %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= request.user_id %>
-  </p>
-
-</div>
+<% if event.user != current_user %>
+  <%= button_to "Request", requests_path(event_id: event) %>
+<% else %>
+  <% event.requests.where(event_id: event.id, status: 'pending').each do |request| %>
+    <%= request.user.email %>
+    <%= button_to 'Accept', accept_request_path(request) %>
+    <%= button_to 'Decline', reject_request_path(request) %>
+    <br>
+  <% end %>
+<% end %>
