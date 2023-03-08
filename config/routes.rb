@@ -8,7 +8,6 @@ Rails.application.routes.draw do
 
   get "user/:id", to: "users#show", as: :user
 
-  resources :events do
     resources :users do
       resources :requests do
         member do
@@ -17,5 +16,4 @@ Rails.application.routes.draw do
         end
       end
     end
-  end
 end
