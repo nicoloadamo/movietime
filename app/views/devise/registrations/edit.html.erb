@@ -24,6 +24,13 @@
   </div>
 
   <div class="form-actions">
+<%# added nickname and biography to edit  %>
+    <%= f.input :nickname,
+                required: true,
+                input_html: { autocomplete: "nickname" } %>
+    <%= f.input :biography,
+                required: true,
+                input_html: { autocomplete: "biography" } %>
     <%= f.button :submit, "Update" %>
   </div>
 <% end %>
