@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :requests, dependent: :destroy
-  has_many :events
+  has_many :events, dependent: :nullify
 
   #with this notation we are giving explicitly the roles to users
   #this line is linked to the user model instructions  lines: 11 - 12
