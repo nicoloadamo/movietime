@@ -12,15 +12,16 @@ export default class extends Controller {
     flatpickr(this.startTimeTarget, {
       enableTime: true,
       minDate: "today",
-      defaultDate: "19:00",
       time_24hr: true,
+      altInput: true,
+      altFormat: "j F, Y",
       dateFormat: "d-m-Y"
     })
     flatpickr(this.endTimeTarget, {
       enableTime: true,
-      defaultDate: "22:00",
+      altInput: true,
+      altFormat: "j F, Y",
       time_24hr: true,
-      dateFormat: "d-m-Y"
     })
   }
 }
