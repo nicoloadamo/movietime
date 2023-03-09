@@ -14,13 +14,13 @@ user = User.find_or_create_by(email: "user@movienight.events")
 user.update(password: "user123")
 
 puts "creating movie"
-movie = Movie.find_or_create_by(title: "Matrix", overview: "auhfiesuhfosijdoufhoadiashfous")
+movie = Movie.find_or_create_by(title: "Matrix", overview: "When a beautiful stranger leads computer hacker Neo to a forbidding underworld, he discovers the shocking truth")
 
 puts "creating event"
 event= Event.find_or_create_by(
   user: user,
-  name: "brabasdb453",
-  description:" sdijfhadisufiasduoijf",
+  name: "Let's watch Matrix",
+  description:"Let's watch Matrix with beers and rubies",
   language:"Eng",
   address: "nowhere in particular, 34",
   start_time: Time.now,
@@ -35,6 +35,6 @@ puts event.errors.inspect
 review = Review.find_or_create_by(event: event,
   reviewer: reviewer,
   user: user,
-  comment: "jhfaisudsadjhkufhsadhuashfosidfjods",
+  comment: "Best review ever",
   rating: 5)
 puts review.errors.inspect

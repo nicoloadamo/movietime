@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # Define the show of the user
+  resources :users, only: [ :index, :show, :update]
   root to: "pages#home"
   resources :reviews
   devise_for :users
