@@ -1,48 +1,47 @@
 <div class="container" id="first">
   <div class="container-fluid">
     <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-        <div class="search-form-control form-group events-search">
-            <input class="form-control string required events-form" type="text" name="search[query]" id="search_query" />
-            <button name="button" type="submit" class="btn btn-warning">
-            <i class="fas fa-search"></i> Search
-            </button>
-        </div>
+    <div class="search-form-control form-group events-search">
+      <input class="form-control string required events-form" type="text" name="search[query]" id="search_query" />
+      <button name="button" type="submit" class="btn btn-warning">
+      <i class="fas fa-search"></i> Search
+      </button>
+    </div>
     <% end %>
   </div>
 </div>
 
 <div class="container">
   <div class="row" id="events">
-      <% @events.each do |event| %>
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100">
-            <%= link_to(event) do %>
-              <img src="https://d18mr9iuob0gar.cloudfront.net/media/boats/2022/06/rental-Motor-boat-bPRINCESS-55feet-bZakynthos-bGR_DIGr3Pi.jpg" class="card-img-top"/>
-                <div class="card-body">
-                      <h2 class="card-title"><strong><%= event.name %></strong></h2>
-                      <p class="card-text"><%= event.address %></p>
-                      <br>
-                    <div style="display: flex; justify-content: space-between;">
-                      <div>
-                      <p class="card-text"><%= event.description %></p>
-                      </div>
-                      <div>
-                      <p class="card-text">from <%= event.max_registrations %> peoples</p>
-                      </div>
-                    </div>
-                    <div style="display: flex; justify-content: space-between;">
-                      <div>
-                      <p class="card-text">from <%= event.start_time %></p>
-                      </div>
-                      <div>
-                      <p class="card-text">from <%= event.end_time %></p>
-                    </div>
-                  </div>
-                </div>
-            <% end %>
+    <% @events.each do |event| %>
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card h-100">
+        <%= link_to(event) do %>
+        <img src="https://d18mr9iuob0gar.cloudfront.net/media/boats/2022/06/rental-Motor-boat-bPRINCESS-55feet-bZakynthos-bGR_DIGr3Pi.jpg" class="card-img-top"/>
+        <div class="card-body">
+          <h2 class="card-title"><strong><%= event.name %></strong></h2>
+          <p class="card-text"><%= event.address %></p>
+          <br>
+          <div style="display: flex; justify-content: space-between;">
+            <div>
+              <p class="card-text"><%= event.description %></p>
+            </div>
+            <div>
+              <p class="card-text">from <%= event.max_registrations %> peoples</p>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <div>
+              <p class="card-text">from <%= event.start_time %></p>
+            </div>
+            <div>
+              <p class="card-text">from <%= event.end_time %></p>
+            </div>
           </div>
         </div>
-      <% end %>
+      </div>
+      </div>
+    <% end %>
     </div>
   </div>
 </div>
