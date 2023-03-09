@@ -39,10 +39,8 @@ class ReviewsController < ApplicationController
     respond_to do |format|
       if @review.update(review_params)
         format.html { redirect_to review_url(@review), notice: "Review was successfully updated." }
-        format.json { render :show, status: :ok, location: @review }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @review.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -57,13 +55,14 @@ class ReviewsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_review
-      @review = Review.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def review_params
-      params.require(:review).permit(:comment, :rating, :user_id, :event_id, :reviewer_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_review
+    @review = Review.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def review_params
+    params.require(:review).permit(:comment, :rating, :user_id, :event_id, :reviewer_id)
+  end
 end
