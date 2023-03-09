@@ -19,7 +19,11 @@
           <%= f.input :address, class: 'form-control mb-3' %>
           <%= f.input :start_time, as: :string, input_html: { data: { flatpickr_target: "startTime" }, class: 'form-control mb-3' } %>
           <%= f.input :end_time, as: :string, input_html: { data: { flatpickr_target: "endTime" }, class: 'form-control mb-3' } %>
-          <% f.association :movie, class: 'form-control mb-3' %>
+          <%= f.input :movie,
+          collection: Movie.all,
+          input_html: {multiple: true, data: {controller: "tom-select"}},
+          include_hidden: false %>
+          <% f.association :movie, class: 'form-control mb-3'%>
           <% f.hidden_field :user_id, value: current_user.id %>
         </div>
 
