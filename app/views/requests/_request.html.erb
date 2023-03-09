@@ -1,5 +1,5 @@
 <% if event.user != current_user %>
-  <%= button_to "Request", requests_path(event_id: event) %>
+  <%= button_to "Request", user_requests_path(user_id: @event.user, event_id: event) %>
 <% else %>
   <% event.pending_requests.each do |request| %>
     <%= request.user.email %>
