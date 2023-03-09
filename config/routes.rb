@@ -1,14 +1,18 @@
 Rails.application.routes.draw do
-  # Define the show of the user
-  resources :users, only: [ :index, :show, :update]
   root to: "pages#home"
-  resources :reviews
-  devise_for :users
-  resources :events
-  resources :requests do
-    member do
-      post 'accept'
-      post 'reject'
+
+  devise_for :users # User for creating, updating and deleting users -> Inside of the registrations_controller
+
+  resources :users, only: [ :show ] do # Responsible for displaying user and page only
+    resources :requests do
+      member do
+        post 'accept'
+        post 'reject'
+      end
     end
+
+    resources :reviews, only: [ :new, :create ]
   end
+
+  resources :events
 end

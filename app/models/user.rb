@@ -3,9 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
-  has_many :requests, dependent: :destroy
-  has_many :events, dependent: :nullify
+  has_many :requests # requests as a client
+  has_many :requests_as_owner, through: :events, source: :events, dependent: :destroy
+  has_many :events
 
   #with this notation we are giving explicitly the roles to users
   #this line is linked to the user model instructions  lines: 11 - 12

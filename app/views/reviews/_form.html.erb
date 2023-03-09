@@ -1,17 +1,22 @@
-
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
 <%= simple_form_for(@review) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :comment %>
-    <%= f.input :rating %>
-    <%= f.association :user %>
-    <%= f.association :event %>
-    <%= f.association :reviewer %>
+    <%= f.input :comment, label: "Tell us more about your experience:" %>
+    <%= f.input :rating, collection: 1..5, label: "Give a rating!"%>
+    <% f.association :user %>
+    <% f.association :event %>
+    <% f.association :reviewer %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button class="btn-danger" :submit %>
   </div>
 <% end %>
+  </div>
+  </div>
+</div>
