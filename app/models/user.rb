@@ -11,4 +11,10 @@ class User < ApplicationRecord
   #this line is linked to the user model instructions  lines: 11 - 12
   has_many :received_reviews, foreign_key: :user_id, class_name: "Review"
   has_many :given_reviews, foreign_key: :reviewer_id, class_name: "Review"
+
+  def user_events
+    requests.each do |request|
+      request.event
+    end
+  end
 end
