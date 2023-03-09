@@ -1,0 +1,10 @@
+<% if event.user != current_user %>
+  <%= button_to "Request", requests_path(event_id: event) %>
+<% else %>
+  <% event.pending_requests.each do |request| %>
+    <%= request.user.email %>
+    <%= button_to 'Accept', accept_request_path(request) %>
+    <%= button_to 'Decline', reject_request_path(request) %>
+    <br>
+  <% end %>
+<% end %>

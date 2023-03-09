@@ -1,17 +1,17 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[show update]
+  before_action :set_user, only: %i[ show ]
 
-  def index
-    @users = User.all
-  end
+  # def index
+  #   @users = User.all
+  # end
 
   def show
   end
 
-  def update
-    @user.update(user_params)
-    redirect_to user_path(@user)
-  end
+  # def update
+  #   @user.update(user_params)
+  #   redirect_to user_path(@user)
+  # end
 
   private
 
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def user_params
-    params.require(:user).permit(:biography, :nickname, :user_id)
-  end
+  # def user_params
+  #   params.require(:user).permit(:biography, :nickname, :user_id)
+  # end
 end
