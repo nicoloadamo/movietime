@@ -6,7 +6,7 @@ password_confirmation: "12345678",
 nickname: "WadimM",
 biography: Faker::Lorem.sentence
 
-puts "🫵🏻 Created #{user.email} - #{user.password}"
+puts "🫵🏻 Created #{user.email} - pw: #{user.password}"
 
 user = User.create email: "aleks@movienight.com",
 password: "12345678",
@@ -14,7 +14,7 @@ password_confirmation: "12345678",
 nickname: "AleksV",
 biography: Faker::Lorem.sentence
 
-puts "🤙🏻 Created #{user.email} - #{user.password}"
+puts "🤙🏻 Created #{user.email} - pw: #{user.password}"
 
 
 user = User.create email: "patrick@movienight.com",
@@ -23,7 +23,7 @@ password_confirmation: "12345678",
 nickname: "PatrickC",
 biography: Faker::Lorem.sentence
 
-puts "👨🏻‍💻 Created #{user.email} - #{user.password}"
+puts "👨🏻‍💻 Created #{user.email} - pw: #{user.password}"
 
 
 USERS_TO_CREATE.times do
@@ -33,7 +33,7 @@ USERS_TO_CREATE.times do
     nickname: Faker::FunnyName.name,
     biography: Faker::Lorem.sentence
 
-    puts "👽 Created #{user.nickname} - #{user.password}"
+    puts "👽 Created #{user.nickname} - pw: #{user.password}"
 end
 puts "#############################################"
 puts "#############################################"
