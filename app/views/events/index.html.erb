@@ -12,36 +12,11 @@
 </div>
 
 <div class="container">
-  <div class="row display-flex" id="events">
+  <div class="card-events" id="events">
     <% @events.each do |event| %>
-    <div class="col-lg-4 col-md-6 mb-4">
-      <div class="card-event">
-        <%= link_to(event) do %>
-        <img src="<%= event.movie.poster_url %>">
-        <div class="card-body">
-          <h2 class="card-title"><strong><%= event.name %></strong></h2>
-          <p class="card-text"><%= event.address %></p>
-          <br>
-          <div style="display: flex; justify-content: space-between;">
-            <div>
-              <p class="card-text"><%= event.description %></p>
-            </div>
-            <div>
-              <p class="card-text">from <%= event.max_registrations %> peoples</p>
-            </div>
-          </div>
-          <div style="display: flex; justify-content: space-between;">
-            <div>
-              <p class="card-text">from <%= event.start_time %></p>
-            </div>
-            <div>
-              <p class="card-text">from <%= event.end_time %></p>
-            </div>
-          </div>
-        </div>
-        <% end %>
-      </div>
-    </div>
+
+      <%= render "card_event", event: event %>
+
     <% end %>
   </div>
 </div>
