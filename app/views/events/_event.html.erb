@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <div id="<%= dom_id event %>">
   <p>
     <strong>Name:</strong>
@@ -53,6 +54,64 @@
     <%# TODO - Maps of the address here below with mapbox %>
     <div class="card" style="max-width: 300px">
       <%= image_tag "zurich-map.png" %>
+=======
+<div class="container event">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card" id="<%= dom_id(event) %>">
+        <div class="card-body">
+          <p><strong>Name:</strong></p>
+          <p class="event-name">
+            <span class="name-value"><%= event.name %></span>
+          </p>
+          <img src="<%= asset_path('people3.jpg') %>" alt="house">
+           <p><strong>Description:</strong></p>
+          <p class="event-description">
+            <span class="description-value"><%= event.description %></span>
+          </p>
+        </div>
+      </div>
     </div>
-  </p>
+    <div class="col-md-4">
+      <div class="card" id="<%= dom_id(event) %>">
+        <div class="card-body">
+          <p>
+            <strong>Language:</strong>
+            <%= event.language %>
+          </p>
+          <p>
+            <strong>Number of guests (max):</strong>
+            <%= event.max_registrations %>
+          </p>
+          <p>
+            <strong>Start time:</strong>
+            <%= event.start_time %> - <%= event.end_time %>
+          </p>
+          <p>
+            <strong>Movie:</strong>
+            <%= event.movie_id %>
+          </p>
+          <p>
+            <strong>Address:</strong>
+            <%= event.address %>
+            <% event.latitude %>
+            <% event.longitude %>
+            <div style="max-width: 300px">
+              <%= image_tag "zurich-map.png" %>
+            </div>
+          </p>
+        </div>
+      </div>
+>>>>>>> Stashed changes
+    </div>
+    <div class="col-md-4">
+      <div class="card" id="<%= dom_id(event) %>">
+        <div class="card-body">
+          <img src="<%= asset_path('find.png') %>" alt="poster">
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+

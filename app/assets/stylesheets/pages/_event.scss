@@ -1,0 +1,105 @@
+.event {
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    background-color: #f5f5f5;
+  }
+
+  .event .row {
+    // display: flex;
+    // justify-content: space-between;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+
+  .event .card {
+    margin-bottom: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    // width: max-content;
+  }
+
+  .event .card-body {
+    padding: 20px;
+  }
+
+  .event img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .event p {
+    margin-bottom: 0;
+  }
+
+  @media only screen and (max-width: 767px) {
+    .event .card {
+      margin-bottom: 10px;
+    }
+  }
+
+.event-name {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: #6c757d;
+    margin-bottom: 10px;
+    width: max-content;
+
+    strong {
+    margin-right: 10px;
+    }
+
+    .name-value {
+    font-weight: bold;
+    text-transform: uppercase;
+    }
+}
+
+.event-description {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: #6c757d;
+    margin-bottom: 10px;
+
+    .description-value {
+    word-wrap: break-word;
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; /* Number of lines to show */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    }
+    }
+
+    /* Breaks text after every 20 characters */
+    @media (min-width: 576px) {
+    .event-description .description-value {
+    display: block;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-all;
+    line-break: auto;
+    }
+    .event-description .description-value:before {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    vertical-align: middle;
+    }
+    .event-description .description-value p {
+    display: inline-block;
+    vertical-align: middle;
+    }
+    }
