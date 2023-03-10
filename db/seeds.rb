@@ -4,13 +4,9 @@ EVENTS_TO_CREATE = 5
 REQUESTS_TO_CREATE = 5
 REVIEWS_TO_CREATE = 2
 
-
 Dir[Rails.root.join("db", "seeds", "*.rb")].sort.each do |file|
   require file
 end
-
-
-
 
 # puts "creating reviewer"
 # reviewer = User.find_or_create_by(email: "reviewer@movienight.events")

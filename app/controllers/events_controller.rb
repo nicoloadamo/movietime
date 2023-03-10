@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: %i[show edit update destroy ]
+  before_action :set_event, only: %i[show edit update destroy]
   # GET /events or /events.json
   def index
     @events = Event.all
@@ -13,6 +13,7 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
+    @movie = Movie.new
   end
 
   # GET /events/1/edit
@@ -22,12 +23,12 @@ class EventsController < ApplicationController
   # POST /events or /events.json
   def create
     @event = Event.new(event_params)
-    respond_to do |format|
-      if @event.save
-        format.html { redirect_to event_url(@event), notice: "Event was successfully created." }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-      end
+    @event.movie = Movie.find(event_params[:movie_id])
+    @event.user = current_user
+    if @event.save
+      redirect_to event_url(@event), notice: "Event was successfully created."
+    else
+      render :new
     end
   end
 
@@ -70,7 +71,6 @@ class EventsController < ApplicationController
       :start_time,
       :end_time,
       :movie_id,
-      :user_id,
       :photo
     )
   end
