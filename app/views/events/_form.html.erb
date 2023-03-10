@@ -3,11 +3,11 @@
     <div class="col-md-8">
       <%= simple_form_for @event, data: { controller: 'flatpickr' }, html: {class: 'shadow rounded p-4 bg-white'} do |f| %>
         <div class="icon">
-            <%= link_to events_path do %>
-                <span>
-                  <i class="fa-sharp fa-solid fa-xmark"></i>
-                </span>
-            <% end %>
+          <%= link_to events_path do %>
+            <span>
+              <i class="fa-sharp fa-solid fa-xmark"></i>
+            </span>
+          <% end %>
         </div>
         <%= f.error_notification %>
         <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -19,10 +19,13 @@
           <%= f.input :address, class: 'form-control mb-3' %>
           <%= f.input :start_time, as: :string, input_html: { data: { flatpickr_target: "startTime" }, class: 'form-control mb-3' } %>
           <%= f.input :end_time, as: :string, input_html: { data: { flatpickr_target: "endTime" }, class: 'form-control mb-3' } %>
-          <% f.association :movie, class: 'form-control mb-3' %>
+          <%= f.input :movie,
+                      collection: Movie.all,
+                      input_html: { data: {controller: "tom-select"}},
+                      include_hidden: false
+          %>
           <% f.hidden_field :user_id, value: current_user.id %>
         </div>
-
         <div class="form-actions text-center">
           <%= f.button :submit, class: 'btn btn-primary btn-lg ce-btn' %>
         </div>
