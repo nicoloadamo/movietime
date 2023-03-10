@@ -1,12 +1,9 @@
 <div class=container>
   <%# <p>Find me in app/views/user_events/index.html.erb</p> %>
-  <div class="container">
-    <h1>These are my Events:</h1>
+  <h1>These are my Events:</h1>
+  <div class="card-events" id="myevents">
     <% current_user.events.each do |event| %>
-      <div class="card-body" style="background-image: url(<%= cloudinary_url event.photo.key,  height: 300, width: 400, crop: :fill %>);">
-        <h2><%= event.name %></h2>
-        <p><%= event.description %></p>
-      </div>
+      <%= render "card_event", event: event %>
     <% end %>
   </div>
 </div>
