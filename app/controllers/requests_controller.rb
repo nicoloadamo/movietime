@@ -1,5 +1,5 @@
 class RequestsController < ApplicationController
-  before_action :set_request, only: %i[show edit update destroy accept reject]
+  before_action :set_request, only: %i[ new show edit update destroy accept reject]
 
   # GET /requests or /requests.json
   def index
@@ -40,11 +40,9 @@ class RequestsController < ApplicationController
     @request = Request.new(event: @event, user: current_user, status: :pending)
     respond_to do |format|
       if @request.save
-        format.html { redirect_to event_url(@event), notice: "Request was successfully created." }
-        format.json { render :show, status: :created, location: @request }
+        format.html { redirect_to event_url(@event), notice: "Your request has been sent" }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @request.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -53,11 +51,9 @@ class RequestsController < ApplicationController
   def update
     respond_to do |format|
       if @request.update(request_params)
-        format.html { redirect_to request_url(@request), notice: "Request was successfully updated." }
-        format.json { render :show, status: :ok, location: @request }
+        format.html { redirect_to request_url(@request), notice: "Your request was successfully updated." }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @request.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -65,10 +61,8 @@ class RequestsController < ApplicationController
   # DELETE /requests/1 or /requests/1.json
   def destroy
     @request.destroy
-
     respond_to do |format|
-      format.html { redirect_to requests_url, notice: "Request was successfully destroyed." }
-      format.json { head :no_content }
+      format.html { redirect_to requests_url, notice: "Your request is destroyed." }
     end
   end
 
