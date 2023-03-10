@@ -21,7 +21,7 @@
           <%= f.input :photo, as: :file %>
           <%= f.input :start_time, as: :string, input_html: { data: { flatpickr_target: "startTime" }, class: 'form-control mb-3' } %>
           <%= f.input :end_time, as: :string, input_html: { data: { flatpickr_target: "endTime" }, class: 'form-control mb-3' } %>
-          <%= f.input :movie,
+          <%= f.input :movie_id,
                       collection: Movie.all,
                       input_html: { data: {controller: "tom-select"}},
                       include_hidden: false
