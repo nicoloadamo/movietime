@@ -1,14 +1,11 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-8">
+<div class="container show">
       <%= render @event %>
+       <div class="col-1"></div>
+</div>
       <p>Sign up here below to attend this event</p>
       <%= render 'requests/request', event: @event %>
       <div>
-        <%= link_to "Edit this event", edit_event_path(@event) %> #class "btn btn-warning"
-        <%= link_to "Back to events", events_path %> #class "btn btn-primary"
-        <%= button_to"Destroy this event", @event, method: :delete%> # class "btn btn-danger"
+        <%= link_to "Edit this event", edit_event_path(@event) %>
+        <%= link_to "Back to events", events_path %>
+        <%= button_to"Destroy this event", @event, method: :delete%>
       </div>
-    </div>
-  </div>
-</div>

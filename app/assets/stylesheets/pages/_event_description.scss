@@ -1,16 +1,6 @@
 .event {
     padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-    background-color: #f5f5f5;
-  }
-
-  .event .row {
-    // display: flex;
-    // justify-content: space-between;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
+    background-color: none !important;
   }
 
   .event .card {
@@ -43,15 +33,15 @@
     display: flex;
     align-items: center;
     padding: 10px;
-    border: 2px solid black;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    background-color: #6c757d;
     margin-bottom: 10px;
-    width: max-content;
+    width: 100%;
 
     strong {
     margin-right: 10px;
+    }
+
+    .wrap-text {
+      word-wrap: break-word;
     }
 
     .name-value {
@@ -64,10 +54,6 @@
     display: flex;
     align-items: center;
     padding: 10px;
-    border: 2px solid black;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    background-color: #6c757d;
     margin-bottom: 10px;
 
     .description-value {
@@ -103,3 +89,50 @@
     vertical-align: middle;
     }
     }
+
+.card.movieinfo.bg-image {
+  width: 500px;
+  height: 750px;
+  background-size: cover;
+  position: relative;
+}
+
+.card.movieinfo.bg-image p:last-child {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  margin: 0;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card.movieinfo.bg-image:hover p:last-child {
+  opacity: 1;
+}
+
+.card.movieinfo.bg-image p:nth-child(2) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px 10px 0 0;
+  text-align: right;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.card.movieinfo.bg-image p:first-child {
+position: absolute;
+top: 0;
+left: 0;
+margin: 10px 0 0 10px;
+text-align: left;
+color: white;
+font-size: 24px;
+font-weight: bold;
+}
