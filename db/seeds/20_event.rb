@@ -22,3 +22,5 @@ User.all.each do |user|
     puts "🍿 Created #{event.name} by 🥸 #{event.user.nickname}"
   end
 end
+puts "#############################################"
+puts "#############################################"

@@ -11,3 +11,5 @@ User.all.each do |user|
     puts "🙏🏻 #{request.user.nickname} created a request for #{request.event.name}, status: #{request.status}"
   end
 end
+puts "#############################################"
+puts "#############################################"

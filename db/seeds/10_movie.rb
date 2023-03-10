@@ -1,6 +1,6 @@
 puts "Creating a bunch of movies"
 
-MOVIES_TO_CREATE.times do |page|
+MOVIES_PAGES_TO_FETCH.times do |page|
   puts "Fetching movies 👇🏻"
   url = "https://api.themoviedb.org/3/movie/popular?api_key=bdc4ff49a44cc60aa8cbfae1805d5288&language=en-US&page=#{page+1}" # Replace YOUR_API_KEY with your actual API key
   movies_serialized = URI.open(url).read
@@ -24,3 +24,6 @@ MOVIES_TO_CREATE.times do |page|
     puts "🎞️ Created #{movie.title}"
   end
 end
+puts "🔥🔥🔥 Created #{Movie.all.size} movies 🔥🔥🔥"
+puts "#############################################"
+puts "#############################################"

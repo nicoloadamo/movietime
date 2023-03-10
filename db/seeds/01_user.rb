@@ -35,3 +35,5 @@ USERS_TO_CREATE.times do
 
     puts "👽 Created #{user.nickname} - #{user.password}"
 end
+puts "#############################################"
+puts "#############################################"

@@ -20,3 +20,5 @@ User.all.each do |user|
     # review.user = user     # assigning the picked random user to the reviewed user_id
   end
 end
+puts "#############################################"
+puts "#############################################"

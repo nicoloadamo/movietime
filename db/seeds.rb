@@ -1,8 +1,8 @@
-USERS_TO_CREATE = 10
-MOVIES_TO_CREATE = 3
+USERS_TO_CREATE = 5
+MOVIES_PAGES_TO_FETCH = 20
 EVENTS_TO_CREATE = 5
 REQUESTS_TO_CREATE = 5
-REVIEWS_TO_CREATE = 1
+REVIEWS_TO_CREATE = 2
 
 
 Dir[Rails.root.join("db", "seeds", "*.rb")].sort.each do |file|
