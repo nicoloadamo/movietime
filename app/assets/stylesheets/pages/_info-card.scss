@@ -1,5 +1,5 @@
 .info-card img {
-  width: 80%;
+  width: 200px;
 }
 
 .info-card p {
@@ -16,20 +16,26 @@
 }
 
 .info-cards {
+  background-color: white;
+  flex-direction: row;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin-bottom: 30px;
-  flex-wrap: wrap;
+
+}
+.flexbox {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 @media(max-width: 900px) {
-  .infocard {
+  .info-card {
     margin-bottom: 15px;
   }
 }
 
 @media(max-width: 500px) {
-  .infocard {
+  .info-card {
     justify-content: space-around;
   }
 }

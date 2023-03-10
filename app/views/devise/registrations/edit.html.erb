@@ -27,7 +27,9 @@
       </div>
 
       <div class="form-actions">
-    <%# added nickname and biography to edit  %>
+    <%# added photo, nickname and biography to edit  %>
+        <%= f.input :photo, as: :file %>
+          <%= cl_image_upload_tag(:image_id) %>
         <%= f.input :nickname,
                     required: true,
                     input_html: { autocomplete: "nickname" } %>

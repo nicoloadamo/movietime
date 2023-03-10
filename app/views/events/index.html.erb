@@ -12,12 +12,12 @@
 </div>
 
 <div class="container">
-  <div class="row" id="events">
+  <div class="row display-flex" id="events">
     <% @events.each do |event| %>
     <div class="col-lg-4 col-md-6 mb-4">
-      <div class="card h-100">
+      <div class="card-event">
         <%= link_to(event) do %>
-        <img src="https://d18mr9iuob0gar.cloudfront.net/media/boats/2022/06/rental-Motor-boat-bPRINCESS-55feet-bZakynthos-bGR_DIGr3Pi.jpg" class="card-img-top"/>
+        <img src="https://source.unsplash.com/random/300x500">
         <div class="card-body">
           <h2 class="card-title"><strong><%= event.name %></strong></h2>
           <p class="card-text"><%= event.address %></p>
@@ -39,10 +39,8 @@
             </div>
           </div>
         </div>
+        <% end %>
       </div>
-      </div>
-    <% end %>
-    <% end %>
     </div>
     <% end %>
   </div>

@@ -39,3 +39,15 @@
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
 }
+
+.btn-warning {
+  border-radius: 50px;
+  background: linear-gradient(to right, #FFD700 50%, #FFA500 50%);
+}
+
+.btn-warning > a {
+  text-decoration: none;
+  color: white !important;
+  text-shadow: #4A4A4A;
+  font-weight: bold;
+}

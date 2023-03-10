@@ -35,6 +35,11 @@
   </p>
 
   <p>
+    <strong>Foto:</strong>
+    <%= cl_image_tag @event.photo.key, height: 300, width: 400, crop: :fill %>
+  </p>
+
+  <p>
     <strong>Address:</strong>
     <%= event.address %>
     <% event.latitude %>

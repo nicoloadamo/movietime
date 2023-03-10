@@ -8,11 +8,12 @@
       <div class="form-inputs">
     <%# added nickname and biography to the sign up form %>
         <%= f.input :nickname,
-                    required: true,
+                    required: false,
                     input_html: { autocomplete: "nickname" } %>
         <%= f.input :biography,
-                    required: true,
+                    required: false,
                     input_html: { autocomplete: "biography" } %>
+
         <%= f.input :email,
                     required: true,
                     autofocus: true,
