@@ -26,10 +26,12 @@ class RequestsController < ApplicationController
 
   def accept
     @request.update(status: 'accepted')
+    puts "Requesta accepted"
   end
 
   def reject
     @request.update(status: 'rejected')
+    puts "Requesta rejected"
   end
 
   # POST /requests or /requests.json

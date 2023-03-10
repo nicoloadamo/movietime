@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <%= simple_form_for :search, url: root_path, method: :get do |f| %>
     <div class="search-form-control form-group events-search">
-      <input class="form-control string required events-form" type="text" name="search[query]" id="search_query" />
+      <input class="form-control string required events-form" style="margin-bottom: 8px; " type="text" name="search[query]" id="search_query" />
       <button name="button" type="submit" class="btn btn-warning">
       <i class="fas fa-search"></i> Search
       </button>

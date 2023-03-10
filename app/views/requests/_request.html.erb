@@ -3,8 +3,8 @@
 <% else %>
   <% event.pending_requests.each do |request| %>
     <%= request.user.email %>
-    <%= button_to 'Accept', accept_request_path(request) %>
-    <%= button_to 'Decline', reject_request_path(request) %>
+    <%= button_to 'Accept', accept_user_request_path(request) %>
+    <%= button_to 'Decline', reject_user_request_path(request) %>
     <br>
   <% end %>
 <% end %>
