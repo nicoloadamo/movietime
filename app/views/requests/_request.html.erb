@@ -1,11 +1,18 @@
 <% if event.user != current_user %>
-  <%= button_to "Apply Now!", user_requests_path(user_id: event.user, event_id: event),
-   class: "btn btn-primary position-absolute m-3" %>
+  <div class="choice">
+    <%= button_to "Apply Now!", user_requests_path(user_id: event.user, event_id: event),
+    class: "btn btn-primary position-absolute m-3" %>
+    <%= link_to "Back to events", events_path, class: "btn btn-danger position-absolute m-3" %>
+  </div>
 <% else %>
-  <% event.pending_requests.each do |request| %>
-    <%= request.user.email %>
-    <%= button_to 'Accept', accept_user_request_path(request) %>
-    <%= button_to 'Decline', reject_user_request_path(request) %>
-    <br>
-  <% end %>
+  <div class="pending-requests">
+    <% event.pending_requests.each do |request| %>
+      <div class="row my-3">
+        <div class="col-md-2"><%= image_tag "logo2.png", class: "avatar-large", alt: "avatar-large"%></div>
+        <div class="col-md-4"><%= request.user.nickname %></div>
+        <div class="col-md-3"><%= button_to 'Accept', accept_user_request_path(request), class: 'btn btn-primary' %></div>
+        <div class="col-md-3"><%= button_to 'Decline', reject_user_request_path(request),  class: 'btn btn-primary' %></div>
+      </div>
+    <% end %>
+  </div>
 <% end %>

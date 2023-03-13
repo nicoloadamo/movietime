@@ -1,10 +1,6 @@
 <div class="container-show">
-  <%= render @event %>
-    <div class="eventerquests">
-      <div class="choice">
-        <%= render 'requests/request', event: @event %>
-          <%= link_to "Back to events", events_path,
-          class: "btn btn-danger position-absolute m-3" %>
-      </div>
-    </div>
+  <%= render 'event', event: @event %>
+  <div class="eventerquests">
+    <%= render 'requests/request', event: @event %>
+  </div>
 </div>
