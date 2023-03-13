@@ -1,103 +1,30 @@
-.event {
-    padding: 20px;
-    background-color: none !important;
-  }
-
-  .event .card {
-    margin-bottom: 20px;
-    border-radius: 20px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-    // width: max-content;
-  }
-
-  .event .card-body {
-    padding: 20px;
-  }
-
-  .event img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .event p {
-    margin-bottom: 0;
-  }
-
-  @media only screen and (max-width: 767px) {
-    .event .card {
-      margin-bottom: 10px;
-    }
-  }
-
-.event-name {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    margin-bottom: 10px;
-    width: 100%;
-
-    strong {
-    margin-right: 10px;
-    }
-
-    .wrap-text {
-      word-wrap: break-word;
-    }
-
-    .name-value {
-    font-weight: bold;
-    text-transform: uppercase;
-    }
+.eventdescription {
+  grid-area: eventdescription;
 }
 
-.event-description {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    margin-bottom: 10px;
+.eventdetails {
+  grid-area: eventdetails;
+}
 
-    .description-value {
-    word-wrap: break-word;
-    word-break: break-all;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3; /* Number of lines to show */
-    overflow: hidden;
-    text-overflow: ellipsis;
-    }
-    }
+.eventdescription {
+  grid-area: eventdescription;
+}
 
-    /* Breaks text after every 20 characters */
-    @media (min-width: 576px) {
-    .event-description .description-value {
-    display: block;
-    white-space: pre-wrap;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    word-break: break-all;
-    line-break: auto;
-    }
-    .event-description .description-value:before {
-    content: '';
-    display: inline-block;
-    width: 0;
-    height: 100%;
-    vertical-align: middle;
-    }
-    .event-description .description-value p {
-    display: inline-block;
-    vertical-align: middle;
-    }
-    }
+.eventdetails {
+  grid-area: eventdetails;
+}
 
-.card.movieinfo.bg-image {
-  width: 500px;
-  height: 750px;
-  background-size: cover;
+.movieinfo.bg-image {
+  grid-area: movieinfo-bg-image;
+  grid-row: 1 / span 3;
   position: relative;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100%;
 }
 
-.card.movieinfo.bg-image p:last-child {
+.movieinfo.bg-image p:last-child {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -111,11 +38,11 @@
   transition: opacity 0.3s ease;
 }
 
-.card.movieinfo.bg-image:hover p:last-child {
+.movieinfo.bg-image:hover p:last-child {
   opacity: 1;
 }
 
-.card.movieinfo.bg-image p:nth-child(2) {
+.movieinfo.bg-image p:nth-child(2) {
   position: absolute;
   top: 0;
   right: 0;
@@ -126,13 +53,23 @@
   font-weight: bold;
 }
 
-.card.movieinfo.bg-image p:first-child {
-position: absolute;
-top: 0;
-left: 0;
-margin: 10px 0 0 10px;
-text-align: left;
-color: white;
-font-size: 24px;
-font-weight: bold;
+.movieinfo.bg-image p:first-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 10px 0 0 10px;
+  text-align: left;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.image-tag-class {
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }

@@ -1,11 +1,10 @@
-<div class="container show">
-      <%= render @event %>
-       <div class="col-1"></div>
-</div>
-      <p>Sign up here below to attend this event</p>
-      <%= render 'requests/request', event: @event %>
-      <div>
-        <%= link_to "Edit this event", edit_event_path(@event) %>
-        <%= link_to "Back to events", events_path %>
-        <%= button_to"Destroy this event", @event, method: :delete%>
+<div class="container-show">
+  <%= render @event %>
+    <div class="eventerquests">
+      <div class="choice">
+        <%= render 'requests/request', event: @event %>
+          <%= link_to "Back to events", events_path,
+          class: "btn btn-danger position-absolute m-3" %>
       </div>
+    </div>
+</div>
