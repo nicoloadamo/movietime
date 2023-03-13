@@ -8,9 +8,10 @@ User.all.each do |user|
     puts "🎬 Picking #{movie.title} to associate with the event"
 
     event = Event.create(
-      name: Faker::Movie.quote,
+      name: "Let's watch #{movie.title} together!",
       description: Faker::Lorem.sentence,
       language: "eng",
+      # , "ita", "fr", "esp", "jap"
       address: Faker::Address.full_address,
       start_time: Faker::Time.forward,
       end_time: Faker::Time.forward,

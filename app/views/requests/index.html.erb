@@ -2,21 +2,25 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
       <h1>Requests</h1>
-      <div id="requests">
-        <%= @requests.where(user_id: current_user, status: 'pending').each do |request| %>
-          <p>
-            <strong>Event name:</strong>
-            <%= request.event.name %>
-          </p>
-          <p>
-            <strong>Request status:</strong>
-            <%= request.status %>
-          </p>
-          <%= link_to "Show this request", events_path(request) %>
-          <br>
-        <% end %>
+        <div id="requests">
+          <%= @requests.where(user_id: current_user, status: 'pending').each do |request| %>
+            <p>
+              <a><strong>
+                <%= link_to "#{request.event.name}", event_path(request) %>
+              </strong></a>
+            </p>
+            <p>
+              <strong>Movie:</strong>
+              <%= request.event.movie.title %>
+            </p>
+            <p>
+              <strong>Status:</strong>
+              <%= request.status %>
+            </p>
+            <br>
+          <% end %>
+        </div>
       </div>
-      <%= link_to "New request", new_request_path %>
     </div>
   </div>
 </div>
