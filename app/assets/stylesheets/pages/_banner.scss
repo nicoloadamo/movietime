@@ -1,22 +1,25 @@
 .banner {
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("people3");
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("covers.jpg");
   background-size: cover;
   background-position: center;
   position: center;
-padding: 150px 0;
+  padding: 180px 0;
 }
 
 .banner h1 {
   margin: 0;
   color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
-  font-weight: bold;
+  text-shadow: 10px 10px 0px rgba(0,0,0,0.2);
+  border: 1px;
+  font-size: 90px;
+  font-weight: lighter;
+  letter-spacing: 0.1em;
+
 }
 
 .banner p {
-  font-size: 20px;
+  font-size: 40px;
   color: white;
-  opacity: .7;
+  opacity: .9;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }

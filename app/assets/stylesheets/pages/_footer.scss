@@ -2,23 +2,21 @@
   background: #F4F4F4;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  height: 100px;
-  padding: 0px 50px;
+  justify-content: space-evenly;
+  height: 80px;
+  padding: 10px 10px;
   color: rgba(0,0,0,0.3);
 }
 .footer-links {
-  display: flex;
+  display: contents;
   align-items: center;
-  padding-left: 10px;
+  padding-left: 20px;
 }
 .footer-links img {
   color: black;
   opacity: 0.50;
   text-decoration: none;
-  font-size: 24px;
-  padding: 1px 30px;
-
+  padding: 1px 1px;
 }
 .footer-links img:hover {
   opacity: 1;

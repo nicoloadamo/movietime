@@ -1,47 +1,22 @@
-<div class="eventdescription" id="<%= dom_id(event) %>">
-    <p><strong>Name:</strong></p>
-    <p class="event-name wrap-text">
-      <span class="name-value"><%= event.name %></span>
-    </p>
-    <img src="<%= asset_path('people3.jpg') %>" alt="house">
-      <p><strong>Description:</strong></p>
-    <p class="event-description">
-      <span class="description-value"><%= event.description %></span>
-    </p>
-</div>
-<div class="eventdetails" id="<%= dom_id(event) %>">
-    <p>
-      <strong>Language:</strong>
-      <%= event.language %>
-    </p>
-    <p>
-      <strong>Number of guests (max):</strong>
-      <%= event.max_registrations %>
-    </p>
-    <p>
-      <strong>Start time:</strong>
-      <%= event.start_time %> - <%= event.end_time %>
-    </p>
-    <p>
-      <strong>Movie:</strong>
-      <%= event.movie_id %>
-    </p>
-    <p>
-      <strong>Address:</strong>
-      <%= event.address %>
-      <% event.latitude %>
-      <% event.longitude %>
+<div id="<%= dom_id(event) %>" flexbox>
+  <div class="event-description">
+    <span><%= event.name%></span>
+    <span><%= event.description %></span>
+    <div>
+      <span><%= event.user.nickname%>'s place:</span>
+      <img src="<%= asset_path('people3.jpg') %>">
+    </div>
+  </div>
+
+  <div class="event-details" id="<%= dom_id(event) %>">
+      <p><strong>Language:</strong><%= event.language %></p>
+      <p><strong>Avalable sits:</strong><%= event.max_registrations %></p>
+      <p><strong>Start time:</strong><%= event.start_time %> - <%= event.end_time %></p>
+      <p><strong>Movie:</strong><%= event.movie_id %></p>
+      <p><strong>Location:</strong><%= event.address %>
+      </p>
+    <div class="map">
       <%= image_tag "zurich-map.png" %>
-    </p>
-</div>
-<div class="movieinfo bg-image"
-     style="background-image: url(<%= event.movie.poster_url %>)"
-     id="<%= dom_id(event) %>">
-    <p><%= event.movie.length %> min.</p>
-    <p><%= event.movie.rating %></p>
-    <p><%= event.movie.title %>
-    <br>
-     Genre: <%= event.movie.genre %>
-     <br> <%= event.movie.overview %>
-    </p>
+    </div>
+  </div>
 </div>

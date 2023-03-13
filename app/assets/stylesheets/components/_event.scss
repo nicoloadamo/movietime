@@ -1,0 +1,36 @@
+.flexbox {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.event-description {
+  padding: 20px;
+  grid-area: event-description;
+
+}
+
+.event-details {
+  padding: 20px;
+  grid-area: event-details;
+}
+
+.event-info {
+  padding: 20px;
+  display: flex;
+
+  event-photo {
+  width: 300px;
+  height: 100%;
+  }
+}
+
+.event-requests {
+  padding: 20px;
+  grid-row: 3;
+  grid-column: 1 / 3;
+  // border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}

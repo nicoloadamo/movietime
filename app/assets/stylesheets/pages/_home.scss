@@ -1,6 +1,41 @@
 // Specific CSS for your home-page
 
 .container {
-    padding: 40px;
-    padding-bottom: 50px;
+  padding: 40px;
+}
+
+.card-info {
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+  text-align: center;
+  padding: 20px;
+  width: 420px;
+  height:380px;
+  flex-wrap: wrap;
+  align-items: center;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  box-shadow: 0 0 5px rgb(230,230,230);
+  border: 1px solid rgb(230,230,230);
+  background-color: white;
+}
+
+.card-info img {
+  height: 200px;
+  width: 100%;
+  object-fit: contain;
+  padding: 5xp;
+}
+
+.card-info span {
+  opacity: .5;
+}
+
+.cards-info {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  margin-block: 10px 20px;
+  writing-mode: horizontal-tb;
 }

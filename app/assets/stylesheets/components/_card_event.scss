@@ -22,7 +22,8 @@
     opacity: .7;
     margin: 0;
   }
-  .card-event-infos {
+
+  .card-event-info {
     position: relative;
     background: white;
     opacity:  0.75;
@@ -33,12 +34,6 @@
   }
 }
 
-.carousel-item {
-  margin-right: 60px;
-  margin-left: 60px;
-  margin: auto;
-  width: 100%;
-}
 .card-event > img {
   height: 200px;
   width: 100%;
@@ -58,7 +53,7 @@
 
 }
 
-.card-event .card-event-infos {
+.card-event .card-event-info {
   position: relative;
   background: white;
   opacity:  0.75;
@@ -81,4 +76,11 @@
     text-decoration: none;
     width: 100%;
   }
+}
+
+.carousel-inner {
+  margin-right: 60px;
+  margin-left: 60px;
+  margin: auto;
+  width: 100%;
 }

@@ -1,6 +1,12 @@
-<div class="container-show">
-  <%= render 'event', event: @event %>
-  <div class="eventerquests">
+<div class="container">
+
+  <div class="event-info">
+    <%= render 'event', event: @event %>
+  </div>
+
+
+  <div class="event-requests">
     <%= render 'requests/request', event: @event %>
   </div>
+
 </div>
