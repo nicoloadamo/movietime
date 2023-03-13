@@ -27,12 +27,12 @@ class RequestsController < ApplicationController
 
   def accept
     @request.update(status: 'accepted')
-    puts "Requesta accepted"
+    redirect_to @request.event, notice: "🎉 Congrats! You have accepted the request"
   end
 
   def reject
     @request.update(status: 'rejected')
-    puts "Requesta rejected"
+    redirect_to @request.event, notice: "🎉 Congrats! You have rejected the request"
   end
 
   # POST /requests or /requests.json
