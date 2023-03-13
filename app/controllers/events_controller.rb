@@ -3,6 +3,11 @@ class EventsController < ApplicationController
   # GET /events or /events.json
   def index
     @events = Event.all
+    if params[:query].present?
+      @events = Event.global_search(params[:query])
+    else
+      @events = Event.all
+    end
     @markers = @events.geocoded.map do |event|
       {
         lat: event.latitude,

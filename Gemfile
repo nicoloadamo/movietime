@@ -76,7 +76,11 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
 gem "cloudinary"
 gem 'faker'
 gem "geocoder"
+# Gem to fetch content through http
 gem 'httparty'
+# Gem for better search in a PostgreSQL database
+gem "pg_search"
