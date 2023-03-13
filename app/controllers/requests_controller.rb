@@ -8,6 +8,7 @@ class RequestsController < ApplicationController
 
   # GET /requests/1 or /requests/1.json
   def show
+    @event = @request.event
   end
 
   # GET /requests/new
@@ -26,24 +27,31 @@ class RequestsController < ApplicationController
 
   def accept
     @request.update(status: 'accepted')
-    puts "Requesta accepted"
+    redirect_to @request.event, notice: "🎉 Congrats! You have accepted the request"
   end
 
   def reject
     @request.update(status: 'rejected')
-    puts "Requesta rejected"
+    redirect_to @request.event, notice: "🎉 Congrats! You have rejected the request"
   end
 
   # POST /requests or /requests.json
   def create
     @event = Event.find(params[:event_id])
-    @request = Request.new(event: @event, user: current_user, status: :pending)
-    respond_to do |format|
-      if @request.save
-        format.html { redirect_to event_url(@event), notice: "Your request has been sent" }
-      else
-        format.html { render :new, status: :unprocessable_entity }
+    @request = Request.find_by(user_id: current_user.id, event_id: @event.id)
+    if @request.nil?
+      respond_to do |format|
+        @request = Request.new(event: @event, user: current_user, status: :pending)
+        if @request.save
+          format.html { redirect_to(user_request_path(current_user, @request),
+            notice: "🎉 Congrats! Your request has been sent to the host") }
+        else
+          format.html { render :new, status: :unprocessable_entity }
+        end
       end
+    else
+      redirect_to user_requests_path(current_user),
+        notice: "💫 It seems you have already applied to the event, find it here below."
     end
   end
 

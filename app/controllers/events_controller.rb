@@ -3,7 +3,20 @@ class EventsController < ApplicationController
   # GET /events or /events.json
   def index
     @events = Event.all
-    # @requests = Request.new
+    if params[:query].present?
+      @events = Event.global_search(params[:query])
+    else
+      @events = Event.all
+    end
+    @markers = @events.geocoded.map do |event|
+      {
+        lat: event.latitude,
+        lng: event.longitude,
+        info_window_html: render_to_string(partial: "events/info_window_html", locals: {event: event}),
+        # Passes the flat to the partial
+        marker_html: render_to_string(partial: "marker", locals: {event: event})
+      }
+    end
   end
 
   # GET /events/1 or /events/1.json

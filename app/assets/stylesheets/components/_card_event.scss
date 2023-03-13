@@ -33,6 +33,40 @@
   }
 }
 
+.carousel-item {
+  margin-right: 60px;
+  margin-left: 60px;
+  margin: auto;
+  width: 100%;
+}
+.card-event > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-event h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-event p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+
+}
+
+.card-event .card-event-infos {
+  position: relative;
+  background: white;
+  opacity:  0.75;
+  bottom: 0;
+  padding: 16px;
+  min-height: 250px;
+}
+
 .card-event .avatar-large {
   position: absolute;
   right: 16px;

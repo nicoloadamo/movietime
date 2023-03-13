@@ -1,59 +1,47 @@
-<div class="container event">
-  <div class="row">
-    <div class="col-md-4">
-      <div class="card" id="<%= dom_id(event) %>">
-        <div class="card-body">
-          <p><strong>Name:</strong></p>
-          <p class="event-name">
-            <span class="name-value"><%= event.name %></span>
-          </p>
-          <img src="<%= asset_path('people3.jpg') %>" alt="house">
-           <p><strong>Description:</strong></p>
-          <p class="event-description">
-            <span class="description-value"><%= event.description %></span>
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card" id="<%= dom_id(event) %>">
-        <div class="card-body">
-          <p>
-            <strong>Language:</strong>
-            <%= event.language %>
-          </p>
-          <p>
-            <strong>Number of guests (max):</strong>
-            <%= event.max_registrations %>
-          </p>
-          <p>
-            <strong>Start time:</strong>
-            <%= event.start_time %> - <%= event.end_time %>
-          </p>
-          <p>
-            <strong>Movie:</strong>
-            <%= event.movie_id %>
-          </p>
-          <p>
-            <strong>Address:</strong>
-            <%= event.address %>
-            <% event.latitude %>
-            <% event.longitude %>
-            <div style="max-width: 300px">
-              <%= image_tag "zurich-map.png" %>
-            </div>
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card" id="<%= dom_id(event) %>">
-        <div class="card-body">
-          <img src="<%= asset_path('find.png') %>" alt="poster">
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="eventdescription" id="<%= dom_id(event) %>">
+    <p><strong>Name:</strong></p>
+    <p class="event-name wrap-text">
+      <span class="name-value"><%= event.name %></span>
+    </p>
+    <img src="<%= asset_path('people3.jpg') %>" alt="house">
+      <p><strong>Description:</strong></p>
+    <p class="event-description">
+      <span class="description-value"><%= event.description %></span>
+    </p>
 </div>
-
-
+<div class="eventdetails" id="<%= dom_id(event) %>">
+    <p>
+      <strong>Language:</strong>
+      <%= event.language %>
+    </p>
+    <p>
+      <strong>Number of guests (max):</strong>
+      <%= event.max_registrations %>
+    </p>
+    <p>
+      <strong>Start time:</strong>
+      <%= event.start_time %> - <%= event.end_time %>
+    </p>
+    <p>
+      <strong>Movie:</strong>
+      <%= event.movie_id %>
+    </p>
+    <p>
+      <strong>Address:</strong>
+      <%= event.address %>
+      <% event.latitude %>
+      <% event.longitude %>
+      <%= image_tag "zurich-map.png" %>
+    </p>
+</div>
+<div class="movieinfo bg-image"
+     style="background-image: url(<%= event.movie.poster_url %>)"
+     id="<%= dom_id(event) %>">
+    <p><%= event.movie.length %> min.</p>
+    <p><%= event.movie.rating %></p>
+    <p><%= event.movie.title %>
+    <br>
+     Genre: <%= event.movie.genre %>
+     <br> <%= event.movie.overview %>
+    </p>
+</div>
