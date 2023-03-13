@@ -1,7 +1,9 @@
 .banner {
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("people3");
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  position: center;
+padding: 150px 0;
 }
 
 .banner h1 {

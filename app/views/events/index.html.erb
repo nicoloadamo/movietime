@@ -1,18 +1,15 @@
-<div class="container" id="first">
-  <div class="container-fluid">
+<div class="container">
+
+  <div class="event-search">
     <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-    <div class="search-form-control form-group events-search">
-      <input class="form-control string required events-form" style="margin-bottom: 8px; " type="text" name="search[query]" id="search_query" />
-      <button name="button" type="submit" class="btn btn-warning">
-      <i class="fas fa-search"></i> Search
-      </button>
+    <div class="search-form-control form-group events-search sticky-top">
+      <input class="form-control string required events-form" type="text" name="search[query]" id="search_query" />
+      <button name="button" type="submit" class="btn btn-warning">Search</button>
     </div>
     <% end %>
   </div>
-</div>
 
-<div class="container">
-  <div class="card-events" id="events">
+  <div class="cards-event row" id="events">
     <% @events.each do |event| %>
 
       <%= render "card_event", event: event %>
