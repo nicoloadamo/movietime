@@ -12,6 +12,17 @@ class Event < ApplicationRecord
 
   after_validation :geocode, if: :will_save_change_to_address?
 
+  include PgSearch::Model
+
+  pg_search_scope :global_search,
+  against: %i[name description language address],
+  associated_against: {
+    movie: %i[title overview genre]
+  },
+  using: {
+    tsearch: { prefix: true }
+  }
+
   def all_participants
     requests.where(status: :accepted)
   end
