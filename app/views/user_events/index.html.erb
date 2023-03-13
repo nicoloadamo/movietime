@@ -1,9 +1,20 @@
 <div class=container>
   <%# <p>Find me in app/views/user_events/index.html.erb</p> %>
   <h1>These are my Events:</h1>
-  <div class="card-events" id="myevents">
-    <% current_user.events.each do |event| %>
-      <%= render "card_event", event: event %>
-    <% end %>
+  <%= current_user.events.count %>
+  <div id="carouselExampleControls" class="carousel carousel-dark slide card-events" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <% current_user.events.each_with_index do |event, index| %>
+        <%= render "card_event", event: event, index: index %>
+      <% end %>
+    </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
   </div>
 </div>

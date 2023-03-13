@@ -1,6 +1,6 @@
-<div class="cards-event">
+<div class="carousel-item <%= 'active' if index == 0 %>">
   <%= link_to(event) do %>
-    <div class="card-event col-lg-3 col-md-4 mb-12" style="background-image: url(<%= event.movie.poster_url %>)">
+    <div class="card-event" style="background-image: url(<%= event.movie.poster_url %>)">
 
       <div class="card-event-infos">
         <%= image_tag "logo2.png", class: "avatar-large", alt: "avatar-large"%>
