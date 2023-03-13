@@ -1,7 +1,7 @@
 <div class=container>
   <%# <p>Find me in app/views/user_events/index.html.erb</p> %>
   <h1>These are my Events:</h1>
-  <%# <%= current_user.events.count %> %>
+  <%# <%= current_user.events.count %>
   <div id="carouselExampleControls" class="carousel carousel-dark slide card-events" data-bs-ride="carousel">
     <div class="carousel-inner">
       <% current_user.events.each_with_index do |event, index| %>
