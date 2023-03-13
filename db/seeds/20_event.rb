@@ -28,9 +28,7 @@ User.all.each do |user|
     event = Event.create(
       name: "Let's watch #{movie.title} together!",
       description: Faker::Lorem.sentence,
-      language: "eng",
-      # , "ita", "fr", "esp", "jap"
-      # address: Faker::Address.full_address,
+      language: ["eng","ita","fr","esp","jap"].sample,
       address: generate_address(addresses),
       start_time: Faker::Time.forward,
       end_time: Faker::Time.forward,

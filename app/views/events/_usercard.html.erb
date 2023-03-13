@@ -1,0 +1,16 @@
+<%# This partial should be in the movie directory %>
+<div class="card h-100">
+  <%= link_to(user) do %>
+  <img src="<%= user.avatar %>) class="card-img-top"/>
+  <div class="card-body">
+    <h2 class="card-title"><strong><%= user.name %></strong></h2>
+    <p class="card-text"><%= user.rating %></p>
+    <br>
+    <div style="display: flex; justify-content: space-between;">
+      <div>
+        <p class="card-text"><%= user.biography %></p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

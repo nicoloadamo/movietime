@@ -1,48 +1,6 @@
 // Specific CSS for your home-page
 
 .container {
-    padding: 0px;
+    padding: 40px;
     padding-bottom: 50px;
 }
-
-.break-out {
-    width: 100vw;
-    position: relative;
-    left: calc(-1*(100vw - 100%) /2	);
-    margin-top: -45px;
-}
-
-.banner {
-    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("people3");
-    background-size: cover;
-    background-position: center;
-    position: relative;
-	padding: 150px 0;
-}
-
-.home-search {
-    position: absolute;
-    bottom: 0;
-    right: 10%;
-    margin-bottom: 100px;
-    width: 400px;
-  }
-
-  .home-search .btn {
-    position: absolute;
-    top: 8px;
-    bottom: 8px;
-    right: 8px;
-  }
-
-  .home-search .home-form {
-    height: 3.5rem;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-    border: 1px solid #E7E7E7;
-  }
-
-  .home-search .home-form:focus {
-    border: 1px solid #1EDD88;
-    outline: none !important;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  }
