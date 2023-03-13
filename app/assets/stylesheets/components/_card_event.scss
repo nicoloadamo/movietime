@@ -10,8 +10,10 @@
   align-items: flex-end;
 }
 .carousel-item {
-  padding-right: 60px;
-  padding-left: 60px;
+  margin-right: 60px;
+  margin-left: 60px;
+  margin: auto;
+  width: 100%;
 }
 .card-event > img {
   height: 200px;
