@@ -21,6 +21,6 @@ class Event < ApplicationRecord
   end
 
   def pending_requests
-    requests.where(status: :pending)
+    requests.where(status: "pending")
   end
 end
