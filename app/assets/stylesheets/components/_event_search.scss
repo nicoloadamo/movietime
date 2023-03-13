@@ -1,0 +1,25 @@
+
+
+.events-search {
+  margin-top: 10px;
+  width: 400px;
+  margin: auto;
+
+  .events-form {
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    border-radius: 40px;
+    align-items: center;
+
+  }
+
+  .btn-warning {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+  }
+
+  .events-form:focus {
+    border: 1px solid orange;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  }
+}

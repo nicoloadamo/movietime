@@ -7,8 +7,8 @@
 }
 
 .info-card {
-  width: 500 px;
-  border-radius: 3px;
+  width: 420px;
+  border-radius: 5px;
   box-shadow: 0 0 5px rgb(230,230,230);
   text-align: center;
   padding: 20px;
@@ -17,18 +17,14 @@
 
 .info-cards {
   background-color: white;
+  display: flex;
   flex-direction: row;
-  display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   margin-bottom: 30px;
-
-}
-.flexbox {
-  display: flex;
-  justify-content: space-evenly;
 }
 
-@media(max-width: 900px) {
+
+@media(max-width: 992px) {
   .info-card {
     margin-bottom: 15px;
   }
