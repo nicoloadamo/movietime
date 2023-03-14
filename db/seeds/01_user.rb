@@ -8,6 +8,7 @@ biography: Faker::Lorem.sentence
 
 puts "🫵🏻 Created #{user.email} - pw: #{user.password}"
 
+
 user = User.create email: "aleks@movienight.com",
 password: "12345678",
 password_confirmation: "12345678",
@@ -24,6 +25,7 @@ biography: Faker::Lorem.sentence
 
 puts "👨🏻‍💻 Created #{user.email} - pw: #{user.password}"
 
+
 USERS_TO_CREATE.times do
   user = User.create email: Faker::Internet.safe_email,
     password: "12345678",
@@ -31,7 +33,7 @@ USERS_TO_CREATE.times do
     nickname: Faker::FunnyName.name,
     biography: Faker::Lorem.sentence
 
-    puts "👽 Created #{user.nickname} - pw: #{user.password}"
+  puts "👽 Created #{user.nickname} - pw: #{user.password}"
 end
 puts "#############################################"
 puts "#############################################"

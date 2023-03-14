@@ -1,4 +1,3 @@
-
 user = User.create email: "neek@movienight.com",
 password: "12345678",
 password_confirmation: "12345678",
@@ -8,6 +7,7 @@ When I'm not busy coding, you can usually find me either at the movie theater or
 I believe that both film and food have the power to bring people together and create unforgettable experiences.
 Whether I'm working on a software project or whipping up a gourmet meal, I always strive to bring creativity and innovation to everything I do.
 Thanks for stopping by and I hope you enjoy following along on my journey!"
+
 # admin: true
 
 puts "Creating an user for each team member"
@@ -21,6 +21,7 @@ When I'm not busy coding, you can usually find me either at the movie theater or
 I believe that both film and food have the power to bring people together and create unforgettable experiences.
 Whether I'm working on a software project or whipping up a gourmet meal, I always strive to bring creativity and innovation to everything I do.
 Thanks for stopping by and I hope you enjoy following along on my journey!"
+
 # admin: false
 
 puts "🔥 Created #{user.nickname} - #{user.password}"

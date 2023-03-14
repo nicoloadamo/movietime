@@ -24,6 +24,14 @@ class Event < ApplicationRecord
     tsearch: { prefix: true }
   }
 
+  def location_photo
+    if photo.attached?
+      photo.key
+    else
+      "people3_hvwuuo.jpg"
+    end
+  end
+
   def all_participants
     requests.where(status: :accepted)
   end

@@ -1,9 +1,8 @@
 <div class="carousel-item <%= 'active' if index == 0 %>">
   <%= link_to(event) do %>
     <div class="card-event" style="background-image: url(<%= event.movie.poster_url %>)">
-
-      <div class="card-event-infos">
-        <%= image_tag "logo2.png", class: "avatar-large", alt: "avatar-large"%>
+      <div class="card-event-info">
+        <%= cl_image_tag event.user.avatar, class: "avatar-large", alt: "avatar-large"%>
         <h2 class="event-title"><strong><%= event.movie.title %>  -  "[ <%= event.language %> ]" </strong></h2>
 
         <h2><strong><%= event.name %></strong></h2>

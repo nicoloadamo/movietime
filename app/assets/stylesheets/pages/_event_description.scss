@@ -8,6 +8,7 @@
 
 .eventdescription {
   grid-area: eventdescription;
+  padding: 0 40px;
 }
 
 .eventdetails {
@@ -21,7 +22,8 @@
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  height: 100%;
+  height: calc(100vh - 160px);
+  margin: 0 40px;
 }
 
 .movieinfo.bg-image p:last-child {

@@ -2,6 +2,23 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
 
+<%= simple_form_for @event, data: { controller: 'flatpickr' } do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :language %>
+    <%= f.input :photo, as: :file %>
+    <%= f.input :max_registrations %>
+    <%= f.input :address %>
+    <%= f.input :start_time, as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
+    <%= f.input :end_time, as: :string, input_html: { data: { flatpickr_target: "endTime" } } %>
+    <% f.association :movie %>
+    <% f.hidden_field :user_id, value: current_user.id %>
+  </div>
+
+
       <%= simple_form_for @event, data: { controller: 'flatpickr' }, html: {class: 'shadow rounded p-4 bg-white'} do |f| %>
         <div class="icon">
           <%= link_to events_path do %>

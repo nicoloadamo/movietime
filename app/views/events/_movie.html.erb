@@ -1,0 +1,9 @@
+<div class="movie-info" style="background-image: url(<%= event.movie.poster_url %>) "id="<%= dom_id(event) %>">
+  <div class="movie-details">
+    <p><%= event.movie.length %> min.</p>
+    <p><%= event.movie.rating %></p>
+    <p><%= event.movie.title %> </p>
+    <p>Genre: <%= event.movie.genre %></p>
+    <span><%= event.movie.overview %></span>
+  </div>
+</div>
