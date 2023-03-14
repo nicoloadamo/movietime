@@ -12,9 +12,8 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <button name="button" type="submit" class="btn btn-warning">
-            <%= link_to "Host a MovieNight!", new_event_path %>
-            </button>
+            <%= link_to "Host a MovieNight!", new_event_path, class: "btn btn-warning" %>
+            </>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "logo2.png", class: "avatar-large dropdown-toggle",
