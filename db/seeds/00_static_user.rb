@@ -1,4 +1,3 @@
-
 user = User.create email: "neek@movienight.com",
 password: "12345678",
 password_confirmation: "12345678",
