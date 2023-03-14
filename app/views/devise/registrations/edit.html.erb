@@ -11,7 +11,7 @@
           <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
         <% end %>
             <%# added photo, nickname and biography to edit  %>
-        <%= cl_image_upload_tag(:image_id) %>
+        <%= f.input :photo, as: :file %>
         <%= f.input :nickname,
                     required: true,
                     input_html: { autocomplete: "nickname" } %>

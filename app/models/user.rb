@@ -6,13 +6,13 @@ class User < ApplicationRecord
   has_many :requests # requests as a client
   has_many :requests_as_owner, through: :events, source: :events, dependent: :destroy
   has_many :events
-  has_one_attached :photo, dependent: :destroy
+  has_one_attached :photo
 
   def avatar
     if photo.attached?
       photo.key
     else
-      "logo2.png"
+      "defaultavatar_qkksmg.jpg"
     end
   end
 
@@ -25,5 +25,11 @@ class User < ApplicationRecord
     requests.each do |request|
       request.event
     end
+  end
+
+  def avg_review
+    return "no reviews" if reviews.empty?
+
+    reviews.average(:rating).round(2)
   end
 end

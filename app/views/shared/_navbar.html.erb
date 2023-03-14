@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "logo.png"%>
+      <h5><%= image_tag "logo.png"%>MovieNight!</h5>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,7 +15,7 @@
             <%= link_to "Host a MovieNight!", new_event_path, class:"nav-link"%>
           </li>
           <li class="nav-item dropdown">
-            <%= image_tag current_user.avatar, class: "avatar-large dropdown-toggle",
+            <%= cl_image_tag current_user.avatar, class: "avatar-large dropdown-toggle",
             id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Requests", user_requests_path(current_user.id), class: "dropdown-item" %>

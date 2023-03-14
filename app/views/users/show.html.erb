@@ -2,8 +2,12 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="info-card">
+
+        <%= cl_image_tag @user.avatar, class: "profile-picture", :width => 400%>
+
         <h1 class="profilecard text-center"><%= @user.nickname %></h1>
         <p><%= @user.biography %></p>
+
       </div>
     </div>
   </div>

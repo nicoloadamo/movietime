@@ -1,31 +1,38 @@
-.flexbox {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.event-description {
-  padding: 20px;
-  grid-area: event-description;
-
-}
-
-.event-details {
-  padding: 20px;
-  grid-area: event-details;
-}
-
 .event-info {
   padding: 20px;
   display: flex;
+  flex-wrap: wrap;
 
-  event-photo {
-  width: 300px;
-  height: 100%;
+}
+
+.event-description {
+  flex: 0 0 50%;
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  margin-bottom: 16px;
+  grid-area: event-description;
+  .location {
+    width: 300px;
+    height: 100%;
   }
 }
 
-.event-requests {
+
+.event-details {
+  flex: 0 0 50%;
   padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  grid-area: event-details;
+}
+
+.event-details #map {
+  width: 300px;
+  height: 100%;
+}
+
+.event-requests {
   grid-row: 3;
   grid-column: 1 / 3;
   // border: 1px solid black;

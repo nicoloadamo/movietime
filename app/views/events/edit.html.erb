@@ -4,8 +4,8 @@
     <h1>Editing event</h1>
       <%= render "form", event: @event %>
       <br>
-      <div>
-        <%= link_to "Show this event", @event %> |
+      <div d-flex>
+        <%= link_to "Update", @event %> |
         <%= link_to "Back to events", events_path %>
       </div>
     </div>
