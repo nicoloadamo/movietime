@@ -1,13 +1,38 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h1>Reviews</h1>
+        <div id="reviews">
+          <%= @reviews.where(reviewer_id: current_user).each do |review| %>
+            <p>
+              <strong>Event</strong>
+              <%= link_to "#{review.event.name}", event_path(review.event) %>
+            </p>
 
-<h1>Reviews</h1>
+            <p>
+              <strong>Movie</strong>
+              <%= review.event.movie.title %>
+            </p>
 
-<div id="reviews">
-  <% @reviews.each do |review| %>
-    <%= render review %>
-    <p>
-      <%= link_to "Show this review", review %>
-    </p>
-  <% end %>
+            <p>
+              <strong>Comment</strong>
+              <%= review.comment %>
+            </p>
+
+            <p>
+              <strong>Rating</strong>
+              <% review.rating.to_i.times do  %>
+              <i class="fa-solid fa-fire"></i>
+              <% end %>
+            </p>
+
+            <p>
+              <strong>Rated user:</strong>
+              <%= link_to "#{review.user.nickname}", user_path(review.user) %>
+            </p>
+            <br>
+          <% end %>
+        </div>
+    </div>
+  </div>
 </div>
-
-<%= link_to "New review", new_review_path %>

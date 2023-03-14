@@ -2,13 +2,13 @@ Rails.application.routes.draw do
   get 'user_events/index'
   root to: "pages#home"
 
-  devise_for :users # User for creating, updating and deleting users -> Inside of the registrations_controller
+  # User for creating, updating and deleting users -> Inside of the registrations_controller
+  devise_for :users
 
-  resources :users, only: [ :show ] do # Responsible for displaying user and page only
+  # Responsible for displaying user and page only
+  resources :users, only: %i[show] do
     resources :requests
-
-    resources :reviews, only: [ :new, :create ]
-    resources :user_events, path: :events, only: [ :index ]
+    resources :user_events, path: :events, only: %i[index]
   end
 
   resources :requests, only: [] do
@@ -18,5 +18,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :events
+  resources :events do
+    resources :reviews, only: %i[index new create]
+  end
 end

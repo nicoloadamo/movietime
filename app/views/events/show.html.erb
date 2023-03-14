@@ -4,3 +4,25 @@
     <%= render 'requests/request', event: @event %>
   </div>
 </div>
+
+</div>
+  <% if @reviews.blank? %>
+      <h3>No reviews just yet, be the first and add a review!</h3>
+  <% else %>
+      <div >
+      <% @event.reviews.each do |review| %>
+      <div class ="shadow p-3 mb-3 bg-white rounded">
+        <p><%= review.reviewer_id.nickname %></p>
+        <p><strong>Rating </strong><% review.rating.to_i.times do  %>
+          <i class="fa-solid fa-star"></i>
+          <% end %></p>
+        <p class="list-group-item"><%= review.comment %></p>
+        </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+<div class = "d-flex justify-content-center m-3">
+    <%= link_to "+Add Review", new_event_review_path(@event), class: "btn btn-primary" %>
+</div>
