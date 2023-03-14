@@ -28,7 +28,7 @@ class Event < ApplicationRecord
       photo.key
     else
       "people3_hvwuuo.jpg"
-  end
+    end
   end
 
   def all_participants
