@@ -1,7 +1,7 @@
 <div class="container">
   <h1 class="event-name wrap-text"><%= @event.name %></h1>
    <p><%= @event.description %></p>
-  <div class="row event-banner" style="height: 370px">
+  <div class="row event-banner" >
     <%= image_tag  @event.movie.poster_url, class: "col-md-3 img-fluid" %>
     <div class="col-md-5">
       <%= cl_image_tag  @event.location_photo %>
@@ -20,13 +20,14 @@
       </p>
 
       <p><strong>Address: </strong><%= @event.address %></p>
+       <%= image_tag "zurich-map.png", class: "event-map"%>
     </div>
   </div>
   <div class="row mt-5">
     <div class="col-md-6">
       <p><%= @event.movie.title %></p>
       <p><span><i class="fa-solid fa-clapperboard"></i><%= @event.movie.length %> min.</span></p>
-      <p><span><i class="fa-solid fa-star"></i><%= @event.movie.rating %></span></p>
+      <p><span><i class="fa-solid fa-star"></i><%= @event.movie.rating %></span>/10</p>
       <p><%= @event.movie.genre %></p>
       <p><%= @event.movie.overview %> </p>
     </div>

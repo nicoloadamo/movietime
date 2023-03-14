@@ -21,8 +21,10 @@
 }
 .event-infos{
   padding: 20px;
+  display: flex;
   border-radius: 20px;
-  border: 1px solid #878787
+  border: 1px solid #878787;
+  flex-direction: column;
 }
 
 .col-md-5-eventdescription {
@@ -53,4 +55,9 @@
   .col-md-6 {
     display: inline-block;
   }
+}
+
+.event-map {
+  object-fit: cover;
+  flex-grow: 1;
 }
