@@ -31,7 +31,29 @@
   border: 1px solid black;
 }
 
-@media (max-width: 767px) {
+
+/* // Tablet
+@media (min-width: 768px) {
+  .choice-mobile {
+    display: none;
+  }
+}
+
+// Desktop
+@media (min-width: 992px) {
+  .choice-mobile {
+    display: none;
+  }
+}
+
+// Huge
+@media (min-width: 1280px) {
+  .choice-mobile {
+    display: none;
+  }
+} */
+
+@media (max-width: 480px) {
   .event-banner .row-mt-5 {
     height: auto;
     display: flex;
