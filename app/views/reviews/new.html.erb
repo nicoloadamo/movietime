@@ -1,9 +1,9 @@
-<h1>New review</h1>
-
-<%= render "form", review: @review %>
-
-<br>
-
-<div>
-  <%= link_to "Back to reviews", reviews_path %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8 justify-content-center" >
+      <h1 class="text-center">New review</h1>
+      <%= render "form", event: @event, review: @review  %>
+      <br>
+    </div>
+  </div>
 </div>

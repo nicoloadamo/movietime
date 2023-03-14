@@ -2,6 +2,7 @@ class Event < ApplicationRecord
   belongs_to :movie
   belongs_to :user
   has_many :requests, dependent: :destroy
+  has_many :reviews
   has_one_attached :photo
   # has_many :events, dependent: :nullify
   geocoded_by :address

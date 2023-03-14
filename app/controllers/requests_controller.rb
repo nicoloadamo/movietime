@@ -1,5 +1,5 @@
 class RequestsController < ApplicationController
-  before_action :set_request, only: %i[ new show edit update destroy accept reject]
+  before_action :set_request, only: %i[new show edit update destroy accept reject]
 
   # GET /requests or /requests.json
   def index
@@ -41,7 +41,7 @@ class RequestsController < ApplicationController
     @request = Request.find_by(user_id: current_user.id, event_id: @event.id)
     if @request.nil?
       respond_to do |format|
-        @request = Request.new(event: @event, user: current_user, status: :pending)
+        @request = Request.new(user: current_user, event: @event, status: :pending)
         if @request.save
           format.html { redirect_to(event_path(@event),
             notice: "🎉 Congrats! Your request has been sent to the host") }

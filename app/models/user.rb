@@ -28,9 +28,9 @@ class User < ApplicationRecord
     end
   end
 
+  # Adds average ratings to the user
   def avg_review
     return "no reviews" if reviews.empty?
-
     reviews.average(:rating).round(2)
   end
 end
