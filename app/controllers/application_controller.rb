@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     # creating an attribute for the uses parameters
-    attributes = [:email, :password, :password_confirmation, :nickname, :biography]
+    attributes = [:email, :password, :password_confirmation, :nickname, :biography, :photo]
 
     # user_params.permit(:email, :password, :password_confirmation, :nickname, :biography ) --> replaced by attributes
     devise_parameter_sanitizer.permit(:sign_up, keys: attributes)

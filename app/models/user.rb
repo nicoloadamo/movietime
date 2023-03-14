@@ -12,7 +12,7 @@ class User < ApplicationRecord
     if photo.attached?
       photo.key
     else
-      "defaultavatar_qkksmg.jpg"
+      "defaultavatar_awidxk.jpg"
     end
   end
 

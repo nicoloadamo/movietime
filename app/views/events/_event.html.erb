@@ -4,9 +4,10 @@
     <span><%= event.description %></span>
 
     <div>
+
       <span><%= event.user.nickname%>'s place:</span>
       <div class="location">
-        <img src="<%= asset_path('people3.jpg') %>">
+        <%= cl_image_tag event.location_photo, width: 600  %>
       </div>
     </div>
 
