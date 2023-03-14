@@ -71,12 +71,26 @@
 }
 
 .cards-event {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
   & > a {
     text-decoration: none;
     width: 100%;
   }
-}
+
+  @media(max-width: 992px) {
+    .cards-event {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media(max-width: 768px) {
+    .cards-event {
+      grid-template-columns: 1fr;
+    }
+  }}
+
 
 .carousel-inner {
   margin-right: 60px;
