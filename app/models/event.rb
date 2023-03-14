@@ -27,7 +27,7 @@ class Event < ApplicationRecord
     if photo.attached?
       photo.key
     else
-      "maze_kbtqrd.jpg"
+      "people3_hvwuuo.jpg"
     end
   end
 
