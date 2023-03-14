@@ -1,6 +1,37 @@
-<div class="container-show">
-  <%= render 'event', event: @event %>
-  <div class="eventerquests">
-    <%= render 'requests/request', event: @event %>
+<div class="container">
+  <h1 class="event-name wrap-text"><%= @event.name %></h1>
+   <p><%= @event.description %></p>
+  <div class="row event-banner" style="height: 370px">
+    <%= image_tag  @event.movie.poster_url, class: "col-md-3 img-fluid" %>
+    <div class="col-md-5">
+      <%= cl_image_tag  @event.location_photo %>
+    </div>
+    <div class="col-md-4 px-4 event-infos">
+      <p>
+        <strong>Language:</strong>
+        <%= @event.language %>
+      </p>
+      <p>
+        <strong>Guests:</strong>
+        <%= "#{@event.requests.where(status: 'accepted').count} / #{@event.max_registrations}" %>
+      </p>
+      <p>
+        <span><i class="fa-regular fa-clock"></i> <%= @event.start_time.strftime("%d %B at %H:%M ") %></span>
+      </p>
+
+      <p><strong>Address: </strong><%= @event.address %></p>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-md-6">
+      <p><%= @event.movie.title %></p>
+      <p><span><i class="fa-solid fa-clapperboard"></i><%= @event.movie.length %> min.</span></p>
+      <p><span><i class="fa-solid fa-star"></i><%= @event.movie.rating %></span></p>
+      <p><%= @event.movie.genre %></p>
+      <p><%= @event.movie.overview %> </p>
+    </div>
+    <div class="col-md-6">
+      <%= render 'requests/request', event: @event %>
+    </div>
   </div>
 </div>

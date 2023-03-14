@@ -1,47 +1,86 @@
+<% if false %>
 <div class="eventdescription" id="<%= dom_id(event) %>">
-    <p><strong>Name:</strong></p>
-    <p class="event-name wrap-text">
-      <span class="name-value"><%= event.name %></span>
-    </p>
-    <img src="<%= asset_path('people3.jpg') %>" alt="house">
-      <p><strong>Description:</strong></p>
-    <p class="event-description">
-      <span class="description-value"><%= event.description %></span>
-    </p>
+   <p class="event-description">
+    <span class="description-value"><%= event.description %></span>
+  </p>
+  <p>
+    <strong>Language:</strong>
+    <%= event.language %>
+  </p>
+  <p>
+    <strong>Guests:</strong>
+    <%= "#{event.requests.where(status: 'accepted').count} / #{event.max_registrations}" %>
+  </p>
+  <p>
+    <strong>Start time:</strong>
+    <%= event.start_time.strftime("%d %B at %H:%M ")  %>
+  </p>
+  <p>
+    <strong>Movie:</strong>
+    <%= event.movie.title %>
+  </p>
+  <p>
+    <strong>Address:</strong>
+    <%= event.address %>
+    <%= image_tag "zurich-map.png" %>
+  </p>
 </div>
+
 <div class="eventdetails" id="<%= dom_id(event) %>">
-    <p>
-      <strong>Language:</strong>
-      <%= event.language %>
-    </p>
-    <p>
-      <strong>Number of guests (max):</strong>
-      <%= event.max_registrations %>
-    </p>
-    <p>
-      <strong>Start time:</strong>
-      <%= event.start_time %> - <%= event.end_time %>
-    </p>
-    <p>
-      <strong>Movie:</strong>
-      <%= event.movie_id %>
-    </p>
-    <p>
-      <strong>Address:</strong>
-      <%= event.address %>
-      <% event.latitude %>
-      <% event.longitude %>
-      <%= image_tag "zurich-map.png" %>
-    </p>
+  <%= cl_image_tag event.location_photo %>
 </div>
-<div class="movieinfo bg-image"
-     style="background-image: url(<%= event.movie.poster_url %>)"
-     id="<%= dom_id(event) %>">
+
+<div class="movieinfo bg-image" style="background-image: url(<%= event.movie.poster_url %>)" id="<%= dom_id(event) %>">
+  <p><%= event.movie.length %> min.</p>
+  <p><%= event.movie.rating %></p>
+  <p><%= event.movie.title %></p>
+  <p>
+    Genre:
+    <%= event.movie.genre %>
+  </p>
+  <p><%= event.movie.overview %> </p>
+</div>
+<% end %>
+<div class="row">
+      <h1 class="event-name wrap-text"><%= event.name %></h1>
+  <div class="col-md-8 event-infos row" >
+    <div class="col-md-4">
+      <p class="event-description">
+        <span class="description-value"><%= event.description %></span>
+      </p>
+      <p>
+        <strong>Language:</strong>
+        <%= event.language %>
+      </p>
+      <p>
+        <strong>Guests:</strong>
+        <%= "#{event.requests.where(status: 'accepted').count} / #{event.max_registrations}" %>
+      </p>
+      <p>
+        <strong>Start time:</strong>
+        <%= event.start_time.strftime("%d %B at %H:%M ")  %>
+      </p>
+      <p>
+        <strong>Movie:</strong>
+        <%= event.movie.title %>
+      </p>
+      <p>
+        <strong>Location</strong>
+        <br />
+      </p>
+    </div>
+    <div class="col-md-8">
+        <%= cl_image_tag event.location_photo %>
+    </div>
+  </div>
+  <div class="col-md-4" style="background-image: url(<%= event.movie.poster_url %>)" id="<%= dom_id(event) %>">
     <p><%= event.movie.length %> min.</p>
     <p><%= event.movie.rating %></p>
-    <p><%= event.movie.title %>
-    <br>
-     Genre: <%= event.movie.genre %>
-     <br> <%= event.movie.overview %>
+    <p><%= event.movie.title %></p>
+    <p>
+      Genre:
+      <%= event.movie.genre %>
     </p>
+    <p><%= event.movie.overview %> </p>
+  </div>
 </div>
