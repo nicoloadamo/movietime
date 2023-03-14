@@ -1,0 +1,23 @@
+.navbar {
+  justify-content: space-between;
+  background: gray;
+}
+
+.navbar .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar .navbar-brand img {
+  width: 40px;
+}
+
+.btn-warning {
+  border-radius: 50px;
+  background: linear-gradient(to right, #FFD700 50%, #FFA500 50%);
+}
+
+.btn-warning > a {
+  text-decoration: none;
+  color: white !important;
+  font-weight: bold;
+}

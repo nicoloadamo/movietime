@@ -43,7 +43,6 @@ class RequestsController < ApplicationController
       respond_to do |format|
         @request = Request.new(event: @event, user: current_user, status: :pending)
         if @request.save
-          # format.html { redirect_to(user_request_path(current_user, @request),
           format.html { redirect_to(event_path(@event),
             notice: "🎉 Congrats! Your request has been sent to the host") }
         else

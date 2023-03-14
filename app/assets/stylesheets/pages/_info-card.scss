@@ -1,0 +1,41 @@
+.info-card img {
+  width: 200px;
+}
+
+.info-card p {
+  opacity: .5;
+}
+
+.info-card {
+  width: 500 px;
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgb(230,230,230);
+  text-align: center;
+  padding: 20px;
+  border: 1px solid rgb(230,230,230);
+}
+
+.info-cards {
+  background-color: white;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 30px;
+
+}
+.flexbox {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+@media(max-width: 900px) {
+  .info-card {
+    margin-bottom: 15px;
+  }
+}
+
+@media(max-width: 500px) {
+  .info-card {
+    justify-content: space-around;
+  }
+}
