@@ -43,7 +43,8 @@ class RequestsController < ApplicationController
       respond_to do |format|
         @request = Request.new(event: @event, user: current_user, status: :pending)
         if @request.save
-          format.html { redirect_to(user_request_path(current_user, @request),
+          # format.html { redirect_to(user_request_path(current_user, @request),
+          format.html { redirect_to(event_path(@event),
             notice: "🎉 Congrats! Your request has been sent to the host") }
         else
           format.html { render :new, status: :unprocessable_entity }
@@ -51,7 +52,7 @@ class RequestsController < ApplicationController
       end
     else
       redirect_to user_requests_path(current_user),
-        notice: "💫 It seems you have already applied to the event, find it here below."
+        notice: "💫 It seems you have already applied to this event, find it here below."
     end
   end
 
