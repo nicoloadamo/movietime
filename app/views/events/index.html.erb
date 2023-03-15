@@ -13,18 +13,23 @@
     <% end %>
   </div>
 
+    <% if @events.blank? %>
+      <div class="empty-search">
+        <h3>No events for the provided location! 😭</h3>
+        <%= image_tag "7VE.gif", width: 400 %>
+      </div>
+    <% else %>
   <div class="content">
-
     <div class="cards-event" id="events">
       <% @events.each do |event| %>
         <%= render "card_event", event: event %>
       <% end %>
     </div>
-
     <div class="map", id= "map"
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
+    <% end %>
   </div>
 </div>
