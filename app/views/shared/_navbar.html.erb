@@ -15,7 +15,7 @@
             <%= link_to "Host a MovieNight!", new_event_path, class:"nav-link"%>
           </li>
           <li class="nav-item dropdown">
-            <%= image_tag 'defaultavatar.jpg', class: "avatar-large dropdown-toggle",
+            <%= cl_image_tag current_user.avatar, class: "avatar-large dropdown-toggle",
             id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Requests", user_requests_path(current_user.id), class: "dropdown-item" %>
