@@ -23,6 +23,7 @@ class EventsController < ApplicationController
 
   # GET /events/1 or /events/1.json
   def show
+    @my_requests = @event.requests.where(user_id: current_user)
   end
 
   # GET /events/new

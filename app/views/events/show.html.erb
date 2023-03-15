@@ -33,10 +33,10 @@
     </div>
   </div>
   <br>
-  <%# Second row of page (application) %>
+  <%# Second row of page (requests) %>
   <div class="row event-banner">
     <div class="col-md-8">
-      <%= render 'requests/request', event: @event %>
+      <%= render 'requests/request', event: @event, my_requests: @my_requests %>
     </div>
     <div class="col-md-4"> <h4>Participants</h4>
       <div class="pending-requests">
