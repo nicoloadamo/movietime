@@ -1,15 +1,35 @@
 <div class="container">
+  <%# User information %>
   <div class="row justify-content-center">
-    <div class="col-md-8">
-
-      <div class="info-card">
-
-        <%= cl_image_tag @user.avatar, width: 400 %>
-
-        <h1 class="profilecard text-center"><%= @user.nickname %></h1>
-        <p><%= @user.biography %></p>
-
-      </div>
+    <div class="col-md-4">
+      <%= cl_image_tag @user.avatar, width: 400 %>
+    </div>
+    <div class="col-md-4">
+      <h1 class="profilecard text-center"><%= @user.nickname %></h1>
+    </div>
+    <div class="col-md-4">
+      <p><%= @user.biography %></p>
+    </div>
+  </div>
+  <br>
+  <%# User reviews %>
+  <div class="row justify-content-center">
+    <%# Reviews given to the user %>
+    <div class="col-md-5">
+      <h3><%= @user.nickname %> reviews</h3>
+          <% if @reviews.nil? %>
+            <p><span>There are no reviews yet</span></p>
+          <% else %>
+            <% render 'reviews/listreviews' %>
+          <% end %>
+    </div>
+    <%# Reviews given about the user %>
+    <div class="col-md-5">
+      <h3>Reviews about <%= @user.nickname %></h3>
+    </div>
+    <%# Redirection to users' index events %>
+    <div class="col-md-2">
+      <p>My events</p>
     </div>
   </div>
 </div>

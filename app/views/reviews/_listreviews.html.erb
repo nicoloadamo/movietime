@@ -1,0 +1,29 @@
+<div id="reviews">
+  <% @reviews.where(reviewer_id: current_user).each do |review| %>
+    <p>
+      <strong>Event</strong>
+      <%= link_to "#{review.event.name}", event_path(review.event) %>
+    </p>
+
+    <p>
+      <strong>Movie</strong>
+      <%= review.event.movie.title %>
+    </p>
+
+    <p>
+      <strong>Comment</strong>
+      <%= review.comment %>
+    </p>
+
+    <p>
+      <strong>Rating</strong>
+      <% review.rating.to_i.times do%>🍿<% end %>
+    </p>
+
+    <p>
+      <strong>Rated user:</strong>
+      <%= link_to "#{review.user.nickname}", user_path(review.user) %>
+    </p>
+    <br>
+  <% end %>
+</div>
