@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 require 'httparty'
 
 puts "🇨🇭 Fetching random addresses from Zurich 💙🤍"
@@ -18,9 +17,6 @@ addresses = JSON.parse(response_body)['features']
 puts "✅ Fetched all addresses from Zurich"
 
 puts "🎉 Creating random Events"
-=======
-puts " Creating random Events"
->>>>>>> Stashed changes
 
 User.all.each do |user|
   EVENTS_TO_CREATE.times do
@@ -30,7 +26,6 @@ User.all.each do |user|
     puts "🎬 Picking #{movie.title} to associate with the event"
 
     event = Event.create(
-<<<<<<< Updated upstream
       name: "Let's watch #{movie.title} together!",
       description: Faker::Lorem.sentence,
       language: ["eng","ita","fr","esp","jap"].sample,
@@ -40,24 +35,9 @@ User.all.each do |user|
       user_id: user.id,
       movie_id: Movie.all.sample.id,
       max_registrations: rand(1..10)
-=======
-      name: Faker::Movie.quote,
-      description: Faker::Lorem.sentence,
-      language: "eng",
-      address: Faker::Address.full_address,
-      start_time: Faker::Time.forward,
-      end_time:Faker::Time.forward,
-      user_id: user.id,
-      movie_id: Movie.all.sample.id,
-      max_registrations: rand(1..10)
-
->>>>>>> Stashed changes
     )
     puts "🍿 Created #{event.name} by 🥸 #{event.user.nickname}"
   end
 end
-<<<<<<< Updated upstream
 puts "#############################################"
 puts "#############################################"
-=======
->>>>>>> Stashed changes
