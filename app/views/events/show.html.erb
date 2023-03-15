@@ -1,60 +1,79 @@
 <div class="container">
-  <h1 class="event-name wrap-text"><%= @event.name %></h1>
-    <p><%= @event.description %></p>
-  <div class="row event-banner" >
+  <%# Title %>
+  <h1 h1 class="event-name wrap-text"><%= @event.name %></h1>
+  <p><%= @event.description %></p>
+  <%# First row of page (description) %>
+  <div class="row event-banner">
     <%= image_tag  @event.movie.poster_url, class: "col-md-3 img-fluid" %>
-    <div class="col-md-5">
-      <%= cl_image_tag  @event.location_photo %>
-    </div>
-    <div class="col-md-4 px-4 event-infos">
+    <div class="col-md-5 px-5">
+      <h3><%= @event.movie.title %></h3>
       <p>
-        <strong>Language:</strong>
+        <span><i class="fa-solid fa-clapperboard"></i> <%= @event.movie.length %> min.</span>
+      </p>
+      <p>
+        <span><i class="fa-solid fa-star"></i><strong> <%= @event.movie.rating %></strong></span>/10
+      </p>
+      <p><strong>Genre</strong> <%= @event.movie.genre %></p>
+      <p><strong>Description </strong> <%= @event.movie.overview %> </p>
+    </div>
+    <div class="col-md-4 px-5 event-infos">
+      <p>
+        <strong>Language</strong>
         <%= @event.language %>
       </p>
       <p>
-        <strong>Guests:</strong>
+        <strong>Guests</strong>
         <%= "#{@event.requests.where(status: 'accepted').count} / #{@event.max_registrations}" %>
       </p>
       <p>
         <span><i class="fa-regular fa-clock"></i> <%= @event.start_time.strftime("%d %B at %H:%M ") %></span>
       </p>
-
-      <p><strong>Address: </strong><%= @event.address %></p>
-        <%= image_tag "zurich-map.png", class: "event-map"%>
+      <p><strong>Address </strong><%= @event.address %></p>
+      <p><strong>Host's place </strong><%= cl_image_tag  @event.location_photo %></p>
     </div>
   </div>
-  <div class="row mt-5">
-    <div class="col-md-6">
-      <p><%= @event.movie.title %></p>
-      <p><span><i class="fa-solid fa-clapperboard"></i><%= @event.movie.length %> min.</span></p>
-      <p><span><i class="fa-solid fa-star"></i><%= @event.movie.rating %></span>/10</p>
-      <p><%= @event.movie.genre %></p>
-      <p><%= @event.movie.overview %> </p>
-    </div>
-    <div class="col-md-6">
+  <br>
+  <%# Second row of page (application) %>
+  <div class="row event-banner">
+    <div class="col-md-8">
       <%= render 'requests/request', event: @event %>
     </div>
-  </div>
-</div>
-
-</div>
-  <% if @reviews.blank? %>
-      <h3>No reviews just yet, be the first and add a review!</h3>
-  <% else %>
-      <div >
-      <% @event.reviews.each do |review| %>
-      <div class ="shadow p-3 mb-3 bg-white rounded">
-        <p><%= review.reviewer_id.nickname %></p>
-        <p><strong>Rating </strong><% review.rating.to_i.times do  %>
-          <i class="fa-solid fa-star"></i>
-          <% end %></p>
-        <p class="list-group-item"><%= review.comment %></p>
-        </div>
+    <div class="col-md-4"> <h4>Participants</h4>
+      <div class="pending-requests">
+        <% @event.all_participants.each do |request| %>
+          <div class="row my-3">
+            <div class="col-md-2"><%= image_tag "defaultavatar.jpg", class: "avatar-large", alt: "avatar-large"%></div>
+            <div class="col-md-4"><%= request.user.nickname %></div>
+          </div>
         <% end %>
       </div>
-    <% end %>
+    </div>
+  </div>
+  <br>
+  <%# Third row of page (reviews) %>
+  <div class="row">
+    <h3>Participants reviews</h3>
+    <div class="col-md-8">
+      <% if @event.reviews.blank? %>
+        <p>No reviews just yet, be the first and add a review!</p>
+      <% else %>
+        <div >
+          <% @event.reviews.each do |review| %>
+            <div class ="shadow p-3 mb-3 bg-white rounded">
+              <p><strong><%= review.reviewer.nickname %></strong> left a review about <strong><%= review.user.nickname %></strong></p>
+              <p><strong></strong><% review.rating.to_i.times do %>
+                <i class="fa-solid fa-star"></i>
+              <% end %></p>
+              <p class="list-group-item"><%= review.comment %></p>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <%# Button to add a a new review %>
+    <div class="col-md-4" style="justify-content:center;">
+      <%= link_to "+Add Review", new_event_review_path(@event), class: "btn btn-primary" %>
+    </div>
   </div>
 
-<div class = "d-flex justify-content-center m-3">
-    <%= link_to "+Add Review", new_event_review_path(@event), class: "btn btn-primary" %>
 </div>

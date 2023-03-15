@@ -1,6 +1,5 @@
-
 .choice {
-  background-image: url(asset-path('choice.png'));
+  background-image: url(asset-path("choice.png"));
   // border: 1px solid black;
   background-size: cover;
   background-position: center center;
@@ -9,28 +8,28 @@
   height: 491px;
   width: 573px;
 }
-.event-banner{
+.event-banner {
+  justify-content: space-around;
   img {
     object-fit: cover;
     height: 100%;
     padding: 0;
   }
-  div{
+  div {
     padding-left: 5px;
   }
 }
-.event-infos{
-  padding: 20px;
+.event-infos {
+  // padding: 20px;
   display: flex;
   border-radius: 20px;
-  border: 1px solid #878787;
+  // border: 1px solid #878787;
   flex-direction: column;
 }
 
 .col-md-5-eventdescription {
   border: 1px solid black;
 }
-
 
 /* // Tablet
 @media (min-width: 768px) {
