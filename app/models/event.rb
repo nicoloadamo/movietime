@@ -28,7 +28,7 @@ class Event < ApplicationRecord
     if photo.attached?
       photo.key
     else
-      "people3_hvwuuo.jpg"
+      "http://res.cloudinary.com/diuodanig/image/upload/v1678873166/twy6ywnkkwp2do8n8pic.jpg"
     end
   end
 
