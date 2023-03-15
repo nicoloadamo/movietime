@@ -8,14 +8,8 @@ User.all.each do |user|
       event_id: Event.all.sample.id,
       user_id: event.user_id
     )
-<<<<<<< Updated upstream
     puts "🙏🏻 #{request.user.nickname} created a request for #{request.event.name}, status: #{request.status}"
   end
 end
 puts "#############################################"
 puts "#############################################"
-=======
-    puts "🙏🏻 #{request.user.nickname} created a #{request.status} request for the event: #{request.event.movie.title}"
-  end
-end
->>>>>>> Stashed changes
