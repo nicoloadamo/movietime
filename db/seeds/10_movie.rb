@@ -1,6 +1,4 @@
 puts "Creating a bunch of movies"
-
-<<<<<<< Updated upstream
 MOVIES_PAGES_TO_FETCH.times do |page|
   puts "Fetching movies 👇🏻"
   url = "https://api.themoviedb.org/3/movie/popular?api_key=bdc4ff49a44cc60aa8cbfae1805d5288&language=en-US&page=#{page+1}" # Replace YOUR_API_KEY with your actual API key
@@ -28,17 +26,4 @@ end
 puts "🔥🔥🔥 Created #{Movie.all.size} movies 🔥🔥🔥"
 puts "#############################################"
 puts "#############################################"
-=======
-MOVIES_TO_CREATE.times do
-  puts "Creating a movie 👇🏻"
-  movie = Movie.create(
-    title: Faker::Movie.title,
-    overview: Faker::Quote.famous_last_words,
-    genre: Faker::Book.genre,
-    poster_url: "https://source.unsplash.com/random/400x600",
-    length: rand(80...300).to_s,
-    rating: rand(0..5)
-  )
-  puts "🎞️ Created #{movie.title}"
-end
->>>>>>> Stashed changes
+
