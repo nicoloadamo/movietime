@@ -1,6 +1,6 @@
 <div class="container">
   <h1 class="event-name wrap-text"><%= @event.name %></h1>
-   <p><%= @event.description %></p>
+    <p><%= @event.description %></p>
   <div class="row event-banner" >
     <%= image_tag  @event.movie.poster_url, class: "col-md-3 img-fluid" %>
     <div class="col-md-5">
@@ -20,7 +20,7 @@
       </p>
 
       <p><strong>Address: </strong><%= @event.address %></p>
-       <%= image_tag "zurich-map.png", class: "event-map"%>
+        <%= image_tag "zurich-map.png", class: "event-map"%>
     </div>
   </div>
   <div class="row mt-5">
