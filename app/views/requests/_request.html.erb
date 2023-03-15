@@ -12,7 +12,7 @@
   <div class="pending-requests">
     <% event.pending_requests.each do |request| %>
       <div class="row my-3">
-        <div class="col-md-2"><%= image_tag "logo2.png", class: "avatar-large", alt: "avatar-large"%></div>
+        <div class="col-md-2"><%= image_tag "defaultavatar.jpg", class: "avatar-large", alt: "avatar-large"%></div>
         <div class="col-md-4"><%= request.user.nickname %></div>
         <div class="col-md-3"><%= button_to 'Accept', accept_request_path(request), class: 'btn btn-primary blue' %></div>
         <div class="col-md-3"><%= button_to 'Decline', reject_request_path(request),  class: 'btn btn-primary red' %></div>
