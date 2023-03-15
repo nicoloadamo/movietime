@@ -33,7 +33,7 @@ class Event < ApplicationRecord
   end
 
   def all_participants
-    requests.where(status: :accepted)
+    requests.where(status: "accepted")
   end
 
   def all_user_received_reviews

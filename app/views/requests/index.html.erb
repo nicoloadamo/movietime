@@ -3,7 +3,7 @@
     <div class="col-md-8">
       <h1>Requests</h1>
         <div id="requests">
-          <%= @requests.where(user_id: current_user, status: 'pending').each do |request| %>
+          <% @requests.where(user_id: current_user, status: 'pending').each do |request| %>
             <p>
               <a><strong>
                 <%= link_to "#{request.event.name}", event_path(request.event) %>
