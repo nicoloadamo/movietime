@@ -7,7 +7,7 @@
 
         <div class="form-inputs">
           <%= f.input :comment, label: "Tell us more about your experience:" %>
-          <%= f.input :rating, collection: 1..5, label: "Give a rating!"%>
+          <%= f.input :rating, collection: 1..5, label: "Give a rating where 1 is ⬇️ and 5 is ⬆️!"%>
           <%= f.input :user_id, collection: @users,  label_method: :nickname, value_method: :id %>
         </div>
 
