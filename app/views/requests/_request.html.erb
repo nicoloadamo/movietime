@@ -2,7 +2,7 @@
   <%# The guest can see the status of their request %>
   <div>
     <% if my_requests.any? %>
-    <h3>My request status</h3>
+    <strong><span>My request status</span></strong>
       <% my_requests.each do |request| %>
       <div class="row my-3">
         <div class="col-md-2"><%= image_tag "defaultavatar.jpg", class: "avatar-large", alt: "avatar-large"%></div>
