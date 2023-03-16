@@ -1,23 +1,27 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-8">
-      <h1>Requests</h1>
+      <h1>Check your requests</h1>
         <div id="requests">
-          <% @requests.where(user_id: current_user, status: 'pending').each do |request| %>
-            <p>
+          <% current_user.requests.each do |request| %>
+            <div class="card-request">
+
+              <h1 class="profilecard text-center"><%= @user.nickname %></h1>
+              <div>
               <a><strong>
                 <%= link_to "#{request.event.name}", event_path(request.event) %>
               </strong></a>
-            </p>
-            <p>
-              <strong>Movie:</strong>
-              <%= request.event.movie.title %>
-            </p>
-            <p>
-              <strong>Status:</strong>
-              <%= request.status %>
-            </p>
-            <br>
+
+              <p>
+                <strong>Movie:</strong>
+                <%= request.event.movie.title %>
+              </p>
+              <p>
+                <strong>Status:</strong>
+                <%= request.status %>
+              </p>
+              </div>
+            </div>
           <% end %>
         </div>
       </div>

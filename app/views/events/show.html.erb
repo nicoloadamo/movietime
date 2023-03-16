@@ -68,10 +68,10 @@
         </div>
       <% end %>
     </div>
-    <%# Button to add a a new review %>
-    <div class="col-md-4" style="justify-content:center;">
-      <%= link_to "+Add Review", new_event_review_path(@event), class: "btn btn-primary" %>
-    </div>
   </div>
-
+  <div class="buttons-div mx-auto w-50">
+    <%= link_to "+Add Review", new_event_review_path(@event), class: "btn btn-primary" %>
+    <%= link_to "Edit this event", edit_event_path(@event), class: "btn btn-warning" %>
+    <%= button_to "Delete this Event", @event, class: "btn btn-danger", method: :delete %>
+  </div>
 </div>
