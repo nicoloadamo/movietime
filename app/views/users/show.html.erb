@@ -1,35 +1,105 @@
 <div class="container">
-  <%# User information %>
-  <div class="row justify-content-center">
-    <div class="col-md-4">
-      <%= cl_image_tag @user.avatar, width: 400 %>
-    </div>
-    <div class="col-md-4">
+  <div class="user-container">
+    <%# User information %>
+    <div class="card-white">
       <h1 class="profilecard text-center"><%= @user.nickname %></h1>
+      <%= cl_image_tag @user.avatar, width: 200, class: "img-circle" %>
+      <p class="text-justify">
+      <br>
+        <%= @user.biography %>
+      </p>
     </div>
-    <div class="col-md-4">
-      <p><%= @user.biography %></p>
-    </div>
-  </div>
-  <br>
-  <%# User reviews %>
-  <div class="row justify-content-center">
-    <%# Reviews given to the user %>
-    <div class="col-md-5">
-      <h3><%= @user.nickname %> reviews</h3>
-          <% if @reviews.nil? %>
-            <p><span>There are no reviews yet</span></p>
+    <div class="card-white">
+    <%# Reviews given by the user %>
+      <h2><%= @user.nickname %>'s reviews</h2>
+      <br>
+        <div>
+          <% if @user.given_reviews.blank? %>
+            <span>There are no reviews yet</span>
           <% else %>
-            <% render 'reviews/listreviews' %>
+            <% @user.given_reviews.each do |review| %>
+              <div class ="shadow p-3 mb-3 bg-white rounded">
+                <p><strong><%= review.reviewer.nickname %></strong> left a review about <strong><%= review.user.nickname %></strong></p>
+                <p><strong></strong><% review.rating.to_i.times do %>🍿<% end %></p>
+                <p class="list-group-item"><%= review.comment %></p>
+              </div>
+            <% end %>
           <% end %>
+        </div>
     </div>
-    <%# Reviews given about the user %>
-    <div class="col-md-5">
-      <h3>Reviews about <%= @user.nickname %></h3>
+    <div class="card-white">
+    <%# Reviews given to the user %>
+      <h2>Reviews about <%= @user.nickname %></h2>
+      <br>
+        <div>
+          <% if @user.received_reviews.blank? %>
+            <span>There are no reviews yet</span>
+          <% else %>
+            <% @user.received_reviews.each do |review| %>
+              <div class ="shadow p-3 mb-3 bg-white rounded">
+                <p><strong><%= review.reviewer.nickname %></strong> left a review about <strong><%= review.user.nickname %></strong></p>
+                <p><strong></strong><% review.rating.to_i.times do %>🍿<% end %></p>
+                <p class="list-group-item"><%= review.comment %></p>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
     </div>
-    <%# Redirection to users' index events %>
-    <div class="col-md-2">
-      <p>My events</p>
+    <div class="card-white">
+      <%# Redirection to users' index events %>
+      <h1>Hosted events</h1>
+      <div class="d-flex justify-content-center">
+        <div id="carouselExampleControls" class="carousel slide card-event" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <% current_user.events.each_with_index do |event, index| %>
+              <div class="carousel-item <%= 'active' if index == 0 %>">
+                <%= link_to(event) do %>
+                  <div class="card-event" style="background-image: url(<%= event.movie.poster_url %>)">
+                    <div class="card-event-info">
+                      <%= cl_image_tag event.user.avatar, class: "avatar-large", alt: "avatar-large"%>
+                      <h2 class="event-title"><strong><%= event.movie.title %>  -  "[ <%= event.language %> ]" </strong></h2>
+                      <h2><strong><%= event.name %></strong></h2>
+                      <span><%= event.description %></span>
+                      <div class="card-event-details">
+                        <span >from <%= event.start_time %></span>
+                        <span>from <%= event.max_registrations %> peoples</span>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-white">
+      <%# Redirection to users' index events %>
+      <h1>Attended events</h1>
+      <div class="d-flex justify-content-center">
+        <div id="carouselExampleControls" class="carousel slide card-event" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <% @events.each_with_index do |event, index| %>
+              <div class="carousel-item <%= 'active' if index == 0 %>">
+                <%= link_to(event) do %>
+                  <div class="card-event" style="background-image: url(<%= event.movie.poster_url %>)">
+                    <div class="card-event-info">
+                      <%= cl_image_tag event.user.avatar, class: "avatar-large", alt: "avatar-large"%>
+                      <h2 class="event-title"><strong><%= event.movie.title %>  -  "[ <%= event.language %> ]" </strong></h2>
+                      <h2><strong><%= event.name %></strong></h2>
+                      <span><%= event.description %></span>
+                      <div class="card-event-details">
+                        <span >from <%= event.start_time %></span>
+                        <span>from <%= event.max_registrations %> peoples</span>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
