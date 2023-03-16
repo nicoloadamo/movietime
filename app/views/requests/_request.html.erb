@@ -2,7 +2,6 @@
   <%# The guest can see the status of their request %>
   <div>
     <% if my_requests.any? %>
-    <strong><span>My request status</span></strong>
       <% my_requests.each do |request| %>
       <div class="row my-3">
         <div class="col-md-2"><%= image_tag "defaultavatar.jpg", class: "avatar-large", alt: "avatar-large"%></div>
@@ -26,11 +25,11 @@
   </div>
 <% else %>
   <div class="pending-requests">
-    <h3>Requests</h3>
+    <%# Requests %>
     <% event.pending_requests.each do |request| %>
       <div class="row my-3">
         <div class="col-md-2"><%= image_tag "defaultavatar.jpg", class: "avatar-large", alt: "avatar-large"%></div>
-        <div class="col-md-4"><%= request.user.nickname %></div>
+        <div class="col-md-4"><%= link_to "#{request.user.nickname}", user_path(request.user.id), style: "text-decoration:none;" %></div>
         <div class="col-md-3"><%= button_to 'Accept', accept_request_path(request), class: 'btn btn-primary blue' %></div>
         <div class="col-md-3"><%= button_to 'Decline', reject_request_path(request),  class: 'btn btn-primary red' %></div>
       </div>

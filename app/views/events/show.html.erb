@@ -50,7 +50,7 @@
         <% @event.all_participants.each do |request| %>
           <div class="row my-3">
             <div class="col-md-2"><%= image_tag "defaultavatar.jpg", class: "avatar-large", alt: "avatar-large"%></div>
-            <div class="col-md-4"><%= link_to "#{request.user.nickname}", user_path(request.user.id) %></div>
+            <div class="col-md-4"><%= link_to "#{request.user.nickname}", user_path(request.user.id), style: "text-decoration:none;" %></div>
           </div>
         <% end %>
       <% end %>
