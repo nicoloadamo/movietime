@@ -1,37 +1,38 @@
-
-.btn-danger { //used to confirm and go on actions
+.btn-danger {
+  //used to confirm and go on actions
   border-radius: 50px;
   height: 40px;
-  background: linear-gradient(to right, #B33030 50%, #CC4949 50%);
+  background: linear-gradient(to right, #b33030 50%, #cc4949 50%);
+  text-decoration: none;
+  color: white;
+}
+
+.btn-primary {
+  //used to cancel and go back actions
+  border-radius: 50px;
+  height: 40px;
+  background: linear-gradient(to right, #2553f5 50%, #3e6cff 50%);
   text-decoration: none;
 }
 
-.btn-primary { //used to cancel and go back actions
+.btn-warning {
+  //used to other actions as search
   border-radius: 50px;
   height: 40px;
-  background: linear-gradient(to right, #2553F5 50%, #3E6CFF 50%);
-  text-decoration: none;
-}
-
-.btn-warning { //used to other actions as search
-  border-radius: 50px;
-  height: 40px;
-  background: linear-gradient(to right, #F5CA55 50%, #FFE26D 50%);
+  background: linear-gradient(to right, #f5ca55 50%, #ffe26d 50%);
   text-decoration: none;
 }
 
 .btn-danger {
-right: 21px;
-bottom: 34px;
-border-radius: 50px;
-height: 39px;
+  right: 21px;
+  bottom: 34px;
+  border-radius: 50px;
+  height: 39px;
 }
 
 .btn-primary {
-left: 17px;
-bottom: 34px;
-border-radius: 50px;
-height: 39px;
+  left: 17px;
+  bottom: 34px;
+  border-radius: 50px;
+  height: 39px;
 }
-
-

@@ -76,14 +76,13 @@
     </div>
     <%# Button to add a new review %>
     <div class="col-md-4" style="justify-content:center;"> <h3 style="color:white;">.</h3>
-  </div>
-  <div class="buttons-div mx-auto w-50">
-    <% if @event.user != current_user %>
-      <%= link_to "+Add Review", new_event_review_path(@event), class: "btn btn-primary" %>
-    <% else %>
-      <%= link_to "+Add Review", new_event_review_path(@event), class: "btn btn-primary" %>
-      <%= link_to "Edit this event", edit_event_path(@event), class: "btn btn-warning" %>
-      <%= button_to "Delete this Event", @event, class: "btn btn-danger", method: :delete %>
-    <% end %>
-  </div>
+    <div class="buttons-div mx-auto w-50">
+      <% if @event.user != current_user %>
+        <%= link_to "+Add Review", new_event_review_path(@event), class: "btn btn-primary" %>
+      <% else %>
+        <%= link_to "+Add Review", new_event_review_path(@event), class: "btn btn-primary" %>
+        <%= link_to "Edit this event", edit_event_path(@event), class: "btn btn-warning" %>
+        <%= button_to "Delete this Event", @event, class: "btn btn-danger", method: :delete %>
+      <% end %>
+    </div>
 </div>
