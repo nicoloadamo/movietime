@@ -16,7 +16,7 @@
       <p><strong>Genre</strong> <%= @event.movie.genre %></p>
       <p><strong>Description </strong> <%= @event.movie.overview %> </p>
     </div>
-    <div class="col-md-4 px-5 event-infos">
+    <div class="col-md-4 event-infos shadow p-3 mb-3 bg-white">
       <p>
         <strong>Language</strong>
         <%= @event.language %>
@@ -29,33 +29,39 @@
         <span><i class="fa-regular fa-clock"></i> <%= @event.start_time.strftime("%d %B at %H:%M ") %></span>
       </p>
       <p><strong>Address </strong><%= @event.address %></p>
+      <p><strong>Host </strong><%= link_to "#{@event.user.nickname}", user_path(@event.user.id) %></p>
       <p><strong>Host's place </strong><%= cl_image_tag  @event.location_photo %></p>
     </div>
   </div>
   <br>
   <%# Second row of page (requests) %>
   <div class="row event-banner">
-    <div class="col-md-8">
-      <%= render 'requests/request', event: @event, my_requests: @my_requests %>
+    <div class="col-md-8"> <h3>Requests</h3>
+      <% if @event.pending_requests.blank? %>
+        <p>No pending requests 🎉</p>
+      <% else %>
+        <%= render 'requests/request', event: @event, my_requests: @my_requests %>
+      <% end %>
     </div>
-    <div class="col-md-4"> <h4>Participants</h4>
-      <div class="pending-requests">
+    <div class="col-md-4"> <h3>Participants</h3>
+      <% if @event.all_participants.blank? %>
+        <p>There are no guests...so far 😉</p>
+      <% else %>
         <% @event.all_participants.each do |request| %>
           <div class="row my-3">
             <div class="col-md-2"><%= image_tag "defaultavatar.jpg", class: "avatar-large", alt: "avatar-large"%></div>
-            <div class="col-md-4"><%= request.user.nickname %></div>
+            <div class="col-md-4"><%= link_to "#{request.user.nickname}", user_path(request.user.id) %></div>
           </div>
         <% end %>
-      </div>
+      <% end %>
     </div>
   </div>
   <br>
   <%# Third row of page (reviews) %>
-  <div class="row">
-    <h3>Participants reviews</h3>
-    <div class="col-md-8">
+  <div class="row event-banner">
+    <div class="col-md-8"> <h3>Participants reviews</h3>
       <% if @event.reviews.blank? %>
-        <p>No reviews just yet, be the first and add a review!</p>
+        <p>No reviews just yet, be the first to add one!</p>
       <% else %>
         <div >
           <% @event.reviews.each do |review| %>
@@ -68,6 +74,8 @@
         </div>
       <% end %>
     </div>
+    <%# Button to add a new review %>
+    <div class="col-md-4" style="justify-content:center;"> <h3 style="color:white;">.</h3>
   </div>
   <div class="buttons-div mx-auto w-50">
     <% if @event.user != current_user %>
