@@ -37,10 +37,10 @@
   <%# Second row of page (requests) %>
   <div class="row event-banner">
     <div class="col-md-8"> <h3>Requests</h3>
-      <% if @event.pending_requests.blank? %>
-        <p>No pending requests 🎉</p>
-      <% else %>
+      <% if @event.pending_requests %>
         <%= render 'requests/request', event: @event, my_requests: @my_requests %>
+      <% else %>
+        <p>No pending requests 🎉</p>
       <% end %>
     </div>
     <div class="col-md-4"> <h3>Participants</h3>

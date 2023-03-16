@@ -16,7 +16,7 @@
           class: "btn btn-danger position-absolute m-3" %>
         <%= link_to "Back to events", events_path, class: "btn btn-primary position-absolute m-3" %>
       </div>
-      <%# Choice div for mobile version %>
+  <%# Choice div for mobile version %>
       <div class="d-flex flex-column d-sm-none">
         <%= button_to "Apply Now!", user_requests_path(user_id: event.user, event_id: event), class: "btn btn-danger m-3", form_class: "d-flex flex-column" %>
         <%= link_to "Back to events", events_path, class: "btn btn-primary m-3" %>
