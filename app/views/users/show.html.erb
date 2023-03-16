@@ -3,7 +3,7 @@
     <%# User information %>
     <div class="card-white">
       <h1 class="profilecard text-center"><%= @user.nickname %></h1>
-      <%= cl_image_tag @user.avatar, width: 200, class: "img-circle" %>
+      <%= cl_image_tag @user.avatar, width: 200, height: 200, class: "img-circle" %>
       <p class="text-justify">
       <br>
         <%= @user.biography %>
