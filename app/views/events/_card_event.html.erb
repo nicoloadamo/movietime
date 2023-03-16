@@ -2,7 +2,7 @@
   <div class="card-event" style="background-image: url(<%= event.movie.poster_url %>)">
 
     <div class="card-event-info">
-      <%= image_tag 'defaultavatar.jpg', class: "avatar-large", alt: "avatar-large"%>
+      <%= cl_image_tag event.user.avatar, class: "avatar-large", alt: "avatar-large"%>
       <h2><strong><%= event.name %></strong></h2>
       <span><%= event.description %></span>
 
