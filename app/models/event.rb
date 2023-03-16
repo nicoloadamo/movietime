@@ -7,7 +7,7 @@ class Event < ApplicationRecord
   # has_many :events, dependent: :nullify
   geocoded_by :address
 
-  validates :name, :description, :language, :address, :start_time, :end_time, :max_registrations, presence: true
+  validates :name, :description, :language, :address, :start_time, :max_registrations, presence: true
   validates :name, length: { minimum: 5, maximum: 40 }
   validates :description, length: { minimum: 5 }
 
