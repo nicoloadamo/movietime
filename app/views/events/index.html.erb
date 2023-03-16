@@ -1,13 +1,13 @@
 <div class="index-container">
   <%# Adds search form with global search from PgSearch %>
-  <div class="event-search sticky-top">
+  <div class="event-search sticky-top mx-auto w-50">
     <%= form_with url: events_path, method: :get, class: "d-flex" do %>
       <div class="search-form-control form-group events-search">
         <%= text_field_tag :query,
           params[:query],
           class: "form-control string required events-form",
           style: "margin-bottom: 8px",
-          placeholder: "Find an event based on location or movie title"
+          placeholder: "Looking for a particular event or movie?"
         %>
         </div>
     <% end %>

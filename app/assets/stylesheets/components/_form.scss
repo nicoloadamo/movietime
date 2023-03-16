@@ -1,43 +1,13 @@
-.form-event {
-    .form-control {
-      border-radius: 50px;
-      border: none;
-      box-shadow: none;
-      border-bottom: 2px solid #bbb;
-      &:focus {
-        box-shadow: none;
-        border-bottom: 2px solid #007bff;
-      }
-    }
-    button {
-      border-radius: 10px;
-      padding: 10px 30px;
-    }
-  }
 
-.ce-btn {
-    border-radius: 50px;
+.bg-image {
+  background-image: url("https://res.cloudinary.com/diuodanig/image/upload/v1678803468/development/maze_kbtqrd.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.icon {
-    text-align: right;
-    a {
-      color: black;
-      &:hover {
-        text-decoration: none;
-    }
-    span {
-      i {
-        color: red;
-        font-size: 16px;
-      }
-    }
-  }
+.title {
+  color: plum;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
-
-// .page-background {
-//   background-image: url("https://res.cloudinary.com/diuodanig/image/upload/v1678805939/development/backg_wuq6mz.jpg");
-//   background-position: center;
-//   background-repeat: no-repeat;
-//   background-size: cover;
-// }

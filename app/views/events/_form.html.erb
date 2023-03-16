@@ -1,35 +1,32 @@
+
+<% content_for :backgroundimage, 'bg-image' %>
 <div class="container form-event my-4">
   <div class="row justify-content-center">
     <div class="col-md-8">
       <%= simple_form_for @event, data: { controller: 'flatpickr' }, html: {class: 'shadow rounded p-4 bg-white'} do |f| %>
-        <div class="icon">
-          <%= link_to events_path do %>
-            <span>
-              <i class="fa-sharp fa-solid fa-xmark"></i>
-            </span>
-          <% end %>
-        </div>
         <%= f.error_notification %>
         <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
         <div class="form-inputs">
           <%= f.input :name %>
           <%= f.input :description %>
-          <%= f.input :language %>
-          <%= f.input :photo, as: :file %>
-          <%= f.input :max_registrations %>
-          <%= f.input :address %>
-          <%= f.input :start_time, as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
-          <%= f.input :end_time, as: :string, input_html: { data: { flatpickr_target: "endTime" } } %>
           <%= f.input :movie_id,
                       collection: Movie.all,
                       input_html: { data: {controller: "tom-select"}},
                       include_hidden: false
           %>
+          <%= f.input :language %>
+          <%= f.input :photo, as: :file %>
+          <div class="d-flex justify-content-between">
+            <%= f.input :max_registrations %>
+            <%= f.input :start_time, as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
+          </div>
+          <%= f.input :address %>
           <% f.hidden_field :user_id, value: current_user.id %>
         </div>
         <div class="form-actions text-center">
-          <%= f.button :submit, class: 'btn btn-primary' %>
+          <%= f.button :submit, class: 'btn btn-danger' %>
         </div>
+
       <% end %>
     </div>
   </div>

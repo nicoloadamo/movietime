@@ -2,14 +2,14 @@ class Event < ApplicationRecord
   belongs_to :movie
   belongs_to :user
   has_many :requests, dependent: :destroy
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
   has_one_attached :photo
   # has_many :events, dependent: :nullify
   geocoded_by :address
 
   validates :name, :description, :language, :address, :start_time, :end_time, :max_registrations, presence: true
   validates :name, length: { minimum: 5, maximum: 40 }
-  validates :description, length: { minimum: 5, maximum: 300 }
+  validates :description, length: { minimum: 5 }
 
   after_validation :geocode, if: :will_save_change_to_address?
 
