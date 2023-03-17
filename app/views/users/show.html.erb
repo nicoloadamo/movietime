@@ -10,14 +10,14 @@
       </p>
     </div>
     <div class="card-white">
-    <%# Reviews given by the user %>
-      <h2><%= @user.nickname %>'s reviews</h2>
+    <%# Reviews given to the user %>
+      <h2>Reviews about <%= @user.nickname %></h2>
       <br>
         <div>
-          <% if @user.given_reviews.blank? %>
+          <% if @user.received_reviews.blank? %>
             <span>There are no reviews yet</span>
           <% else %>
-            <% @user.given_reviews.each do |review| %>
+            <% @user.received_reviews.each do |review| %>
               <div class ="shadow p-3 mb-3 bg-white rounded">
                 <p><strong><%= review.reviewer.nickname %></strong> left a review about <strong><%= review.user.nickname %></strong></p>
                 <p><strong></strong><% review.rating.to_i.times do %>🍿<% end %></p>
@@ -28,14 +28,14 @@
         </div>
     </div>
     <div class="card-white">
-    <%# Reviews given to the user %>
-      <h2>Reviews about <%= @user.nickname %></h2>
+    <%# Reviews given by the user %>
+      <h2><%= @user.nickname %>'s reviews</h2>
       <br>
         <div>
-          <% if @user.received_reviews.blank? %>
+          <% if @user.given_reviews.blank? %>
             <span>There are no reviews yet</span>
           <% else %>
-            <% @user.received_reviews.each do |review| %>
+            <% @user.given_reviews.each do |review| %>
               <div class ="shadow p-3 mb-3 bg-white rounded">
                 <p><strong><%= review.reviewer.nickname %></strong> left a review about <strong><%= review.user.nickname %></strong></p>
                 <p><strong></strong><% review.rating.to_i.times do %>🍿<% end %></p>
