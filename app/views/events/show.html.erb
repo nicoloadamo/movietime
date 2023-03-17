@@ -26,7 +26,7 @@
         <%= "#{@event.requests.where(status: 'accepted').count} / #{@event.max_registrations}" %>
       </p>
       <p>
-        <span><i class="fa-regular fa-clock"></i> <%= @event.start_time.strftime("%d %B at %H:%M ") %></span>
+        <span><i class="fa-regular fa-clock"></i> <%= @event.start_time.strftime("%d %B at 19:30") %></span>
       </p>
       <p><strong>Address </strong><%= @event.address %></p>
       <p><strong>Host </strong><%= link_to "#{@event.user.nickname}", user_path(@event.user.id) %></p>
