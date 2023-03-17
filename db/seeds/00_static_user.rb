@@ -26,9 +26,9 @@ user = User.create email: "wadim@movienight.com",
 password: "12345678",
 password_confirmation: "12345678",
 nickname: "WadimM",
-biography: Hi there, I'm someone who loves to watch movies and meet new friends.
+biography: "Hi there, I'm someone who loves to watch movies and meet new friends.
 I find joy in exploring different cultures and getting to know people from all walks of life.
-I am always on the lookout for new movie recommendations and enjoy discussing my favorite films with others.
+I am always on the lookout for new movie recommendations and enjoy discussing my favorite films with others."
 
 puts "🫵🏻 Created #{user.email} - pw: #{user.password}"
 
